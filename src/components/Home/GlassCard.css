@@ -1,0 +1,19 @@
+.marquee {
+  top: 6em;
+  position: relative;
+  animation: marquee 10s linear infinite;
+}
+
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Make it move! */
+@keyframes marquee {
+  0% {
+    top: 0em;
+  }
+  100% {
+    top: -50em;
+  }
+}

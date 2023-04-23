@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;800&family=Russo+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Orbitron", sans-serif;
+}
+.card {
+  background: rgba(0, 0, 0, 0.15);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+}
+body {
+  background-color: #010508;
+}
+
+.mainbg {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+.btn {
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.marq {
+  background: rgb(1, 5, 8);
+  background: linear-gradient(
+    90deg,
+    rgba(1, 5, 8, 0.7343312324929971) 0%,
+    rgba(4, 4, 22, 0) 50%,
+    rgba(1, 5, 8, 0.639093137254902) 100%
+  );
+}
