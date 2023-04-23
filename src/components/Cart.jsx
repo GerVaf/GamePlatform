@@ -17,7 +17,11 @@ const Cart = () => {
               key={el.id}
               className=" rounded-t-md mainbg w-80 h-72 text-white"
             >
-              <img src={el.background_image} alt="" />
+              <img
+                className=" w-80 object-cover"
+                src={el.background_image}
+                alt=""
+              />
               <div className="py-2 px-5">
                 <p className="font-bold mb-5">{el.name}</p>
                 <div className="flex justify-between items-center">

@@ -33,14 +33,14 @@ const Home = () => {
       </div>
 
       {/* middleMenu */}
-      <div className=" w-8/12 flex flex-col gap-10 ">
+      <div className=" w-7/12 flex flex-col gap-10 ">
         <Hero />
         <PopularSlide />
         <div className="flex gap-5">
           <SlideMenu />
           <div className="text-white ">
             <p className="font-bold text-xl mb-3">CHOSE YOUR GAME TO PLAY</p>
-            <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600  h-[50vh]">
+            <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600  h-[80vh]">
               {Games.map((cd) => {
                 return <Items key={cd.id} item={cd} />;
               })}
@@ -50,7 +50,7 @@ const Home = () => {
       </div>
 
       {/* right menu */}
-      <div className="w-3/12 h-[145vh] overflow-hidden">
+      <div className="w-4/12 h-[170vh] overflow-hidden">
         <p className="text-white font-bold text-xl mb-3">
           YOU CAN GET DOWN FREE
         </p>

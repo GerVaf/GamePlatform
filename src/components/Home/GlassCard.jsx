@@ -11,10 +11,10 @@ const GlassCard = () => {
   console.log(CardData);
   return (
     <>
-      <div className=" marquee flex flex-col justify-center items-center gap-5">
+      <div className=" marquee flex flex-col gap-5">
         {CardData.map((card) => {
           return (
-            <div className=" w-[20vw] p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
+            <div className=" w-[100vw] p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
               <img
                 className=" rounded-3xl w-40 object-cover"
                 src={card.background_image}
