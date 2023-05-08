@@ -1,15 +1,15 @@
-.marquee {
+.marqe {
   top: 6em;
   position: relative;
-  animation: marquee 10s linear infinite;
+  animation: marqe 10s linear infinite;
 }
 
-.marquee:hover {
+.marqe:hover {
   animation-play-state: paused;
 }
 
 /* Make it move! */
-@keyframes marquee {
+@keyframes marqe {
   0% {
     top: 0em;
   }

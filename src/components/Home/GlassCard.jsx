@@ -6,15 +6,15 @@ import "./GlassCard.css";
 
 const GlassCard = () => {
   const CardData = useSelector((state) =>
-    state?.product.item.filter((el) => el.added < 7000)
+    state?.product.item.filter((el) => el.added < 14100)
   );
   console.log(CardData);
   return (
     <>
-      <div className=" marquee flex flex-col gap-5">
+      <div className=" marqe flex flex-col gap-5">
         {CardData.map((card) => {
           return (
-            <div className=" w-[100vw] p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
+            <div className=" w-96 p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
               <img
                 className=" rounded-3xl w-40 object-cover"
                 src={card.background_image}
@@ -23,7 +23,7 @@ const GlassCard = () => {
               <div className="flex flex-col gap-2 justify-start">
                 <div>
                   <span className=" text-sky-500 font-extrabold px-4 py-1 card rounded-2xl">
-                    shooter
+                    {card.genres[0]?.slug}
                   </span>
                 </div>
                 <h2 className="font-bold">{card.name}</h2>
@@ -38,7 +38,7 @@ const GlassCard = () => {
                   </div>
                 </div>
                 <div>
-                  <button className=" btn text-sm font-bold px-5 py-3 rounded-xl">
+                  <button className="text-red-500 text-sm font-bold px-5 py-3 rounded-xl">
                     FREE
                   </button>
                 </div>
@@ -48,7 +48,7 @@ const GlassCard = () => {
         })}
         {CardData.map((card) => {
           return (
-            <div className=" w-[20vw] p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
+            <div className=" w-96 p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
               <img
                 className=" rounded-3xl w-40 object-cover"
                 src={card.background_image}

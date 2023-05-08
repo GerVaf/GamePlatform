@@ -6,26 +6,26 @@ import SlideMenu from "./Home/SlideMenu";
 import PopularSlide from "./Home/PopularSlide";
 import GlassCard from "./Home/GlassCard";
 
-import { gameApi } from "../data/api";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addProducts } from "../data/productsSlice";
+import axios from "axios";
 
 const Home = () => {
   const Games = useSelector((state) => state.product.item);
   const dispatch = useDispatch();
   const FetchingData = async () => {
-    const { results } = await gameApi(
-      "dates=2019-09-01,2023-01-30&platforms=18,1,7"
-    );
-    // console.log(results)
-    dispatch(addProducts(results));
+    const {data} = await axios.get("https://api.rawg.io/api/games?key=64d7c2e284ce406abb26e55182fdf488&dates=2019-09-01,2022-09-30&platforms=18,1,7")
+    const games = data?.results
+    console.log(games)
+    dispatch(addProducts(games));
   };
     // console.log(Games);
     useEffect(() => {
       FetchingData();
     }, []);
   return (
+    
     <div className="flex  gap-16">
       {/* left Menu  */}
       <div className=" w-1/12 h-[145vh] items-center flex mr-5 justify-center border-r border-gray-600">

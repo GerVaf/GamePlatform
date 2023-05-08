@@ -7,6 +7,7 @@ export const ProductSlice = createSlice({
         cart:[]
     },
     reducers:{
+        
         addProducts:(state,action)=>{
             state.item = action.payload
         },

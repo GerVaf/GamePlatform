@@ -6,9 +6,21 @@ import {
 } from "../../../node_modules/react-icons/ri";
 import { BiBell } from "../../../node_modules/react-icons/bi";
 import { Link } from "react-router-dom";
-import Cart from "../Cart";
 import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useEffect } from "react";
 const Nav = () => {
+  const [data, setData] = useState({});
+
+  const getData = () => {
+    
+    // setData(Data)
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  console.log(data);
+
   const amount = useSelector((state) => state.product.cart);
   return (
     <div className=" p-5 flex items-center">
@@ -77,7 +89,11 @@ const Nav = () => {
           </Link>
         </div>
 
-        <div className="avatar">
+        <div className="mx-5 avatar flex gap-5 items-center text-white">
+          <div className="text-lg ">
+            <p>{data.displayName}</p>
+            <p>{data.email}</p>
+          </div>
           <div className=" w-24 border-2 border-[#65a1f0] rounded-2xl">
             <img className=" rounded-2xl" src={profile} />
           </div>
