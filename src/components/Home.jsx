@@ -1,7 +1,6 @@
 import React from "react";
 import Items from "./Home/Items";
 import Hero from "./Home/Hero";
-import Menu from "./Home/Menu";
 import SlideMenu from "./Home/SlideMenu";
 import PopularSlide from "./Home/PopularSlide";
 import GlassCard from "./Home/GlassCard";
@@ -15,25 +14,21 @@ const Home = () => {
   const Games = useSelector((state) => state.product.item);
   const dispatch = useDispatch();
   const FetchingData = async () => {
-    const {data} = await axios.get("https://api.rawg.io/api/games?key=64d7c2e284ce406abb26e55182fdf488&dates=2019-09-01,2022-09-30&platforms=18,1,7")
-    const games = data?.results
-    console.log(games)
+    const { data } = await axios.get(
+      "https://api.rawg.io/api/games?key=64d7c2e284ce406abb26e55182fdf488&dates=2019-09-01,2022-09-30&platforms=18,1,7"
+    );
+    const games = data?.results;
+    console.log(games);
     dispatch(addProducts(games));
   };
-    // console.log(Games);
-    useEffect(() => {
-      FetchingData();
-    }, []);
+  // console.log(Games);
+  useEffect(() => {
+    FetchingData();
+  }, []);
   return (
-    
     <div className="flex  gap-16">
-      {/* left Menu  */}
-      <div className=" w-1/12 h-[145vh] items-center flex mr-5 justify-center border-r border-gray-600">
-        <Menu />
-      </div>
-
       {/* middleMenu */}
-      <div className=" w-7/12 flex flex-col gap-10 ">
+      <div className=" w-8/12 flex flex-col gap-10 ">
         <Hero />
         <PopularSlide />
         <div className="flex gap-5">

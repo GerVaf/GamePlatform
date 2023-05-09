@@ -3,7 +3,6 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Menu from "./Home/Menu";
 
 import { AiFillWindows } from "../../node_modules/react-icons/ai";
 import { FaXbox, FaPlaystation } from "../../node_modules/react-icons/fa";
@@ -40,13 +39,9 @@ const Detail = () => {
   return (
     <>
       <div className="flex">
-        {/* left Menu  */}
-        <div className=" w-1/12 h-[145vh] left-0 items-center flex mr-5 justify-center border-r border-gray-600">
-          <Menu />
-        </div>
 
         {/* right side  */}
-        <div className="w-11/12 flex flex-col gap-5">
+        <div className="w-12/12 flex flex-col gap-5">
           {/* top */}
           <div className=" flex text-white gap-5">
             {/* left  */}

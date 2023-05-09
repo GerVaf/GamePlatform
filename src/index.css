@@ -37,3 +37,7 @@ body {
     rgba(1, 5, 8, 0.639093137254902) 100%
   );
 }
+
+.active{
+  @apply bg-gradient-to-r shadow-blue-500/50 shadow-lg from-cyan-400 to-blue-600 text-white text-2xl  rounded-2xl
+}
