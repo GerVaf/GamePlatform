@@ -1,15 +1,20 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const gameApi = createApi({
-    reducerPath: 'GameApi',
-    baseQuery: fetchBaseQuery({ baseUrl: 'https://api.rawg.io/api'}),
-    tagTypes:['show'],
-    endpoints:(builder)=>({
-        showData : builder.query({
-            query:()=>'/games?key=64d7c2e284ce406abb26e55182fdf488&',
-            providesTags:["show"]
-        })
-        
-    })
-})
-export const {useShowDataQuery} = gameApi
+export const authApi = createApi({
+  reducerPath: "authentication",
+  baseQuery: fetchBaseQuery({
+    baseUrl: "https://contact-app.mmsdev.site/api/v1",
+  }),
+  tagTypes: ["auth"],
+  endpoints: (builder) => ({
+    signUp: builder.mutation({
+      query: (user) => ({
+        url: "/register",
+        method: "POST",
+        body: user,
+      }),
+      invalidatesTags: ["auth"],
+    }),
+  }),
+});
+export const { useSignUpMutation } = authApi;

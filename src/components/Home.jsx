@@ -12,19 +12,7 @@ import axios from "axios";
 
 const Home = () => {
   const Games = useSelector((state) => state.product.item);
-  const dispatch = useDispatch();
-  const FetchingData = async () => {
-    const { data } = await axios.get(
-      "https://api.rawg.io/api/games?key=64d7c2e284ce406abb26e55182fdf488&dates=2019-09-01,2022-09-30&platforms=18,1,7"
-    );
-    const games = data?.results;
-    console.log(games);
-    dispatch(addProducts(games));
-  };
-  // console.log(Games);
-  useEffect(() => {
-    FetchingData();
-  }, []);
+  
   return (
     <div className="flex  gap-16">
       {/* middleMenu */}

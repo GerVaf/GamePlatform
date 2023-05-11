@@ -13,7 +13,6 @@ const Nav = () => {
   const [data, setData] = useState({});
 
   const getData = () => {
-    
     // setData(Data)
   };
   useEffect(() => {
@@ -26,43 +25,19 @@ const Nav = () => {
     <div className=" p-5 flex items-center">
       <div className="text-white w-1/12 font-bold text-2xl flex items-center gap-4 justify-center">
         <RiGlobalFill />
-        <p>DICK</p>
+        <p>DARK</p>
       </div>
-      <div className=" w-8/12">
-        <form>
-          <label
-            for="default-search"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
-          >
-            Search
-          </label>
-          <div class="relative">
-            <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                class="w-5 h-5 text-gray-500 dark:text-gray-400"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                ></path>
-              </svg>
-            </div>
-            <input
-              type="search"
-              id="default-search"
-              class="block w-2/5 p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-100 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 outline-none dark:focus:border-blue-500"
-              placeholder="Search . . . . ."
-              required
-            />
-          </div>
-        </form>
+
+      {/* auth */}
+      <div className=" w-8/12 flex justify-center items-center">
+        <div className="text-white flex gap-10 text-xl">
+          <Link to={"/login"}>
+            <button>Login</button>
+          </Link>
+          <Link to={"/signup"}>
+            <button>SignUp</button>
+          </Link>
+        </div>
       </div>
       <div className=" w-3/12 text-white flex text-3xl  justify-around items-center">
         <div className="flex gap-10">
@@ -88,8 +63,9 @@ const Nav = () => {
             </button>
           </Link>
         </div>
+        {/* profile info */}
 
-        <div className="mx-5 avatar flex gap-5 items-center text-white">
+        {/* <div className="mx-5 avatar flex gap-5 items-center text-white">
           <div className="text-lg ">
             <p>{data.displayName}</p>
             <p>{data.email}</p>
@@ -97,7 +73,7 @@ const Nav = () => {
           <div className=" w-24 border-2 border-[#65a1f0] rounded-2xl">
             <img className=" rounded-2xl" src={profile} />
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

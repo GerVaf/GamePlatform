@@ -1,8 +1,9 @@
 import React from "react";
 import { BsCartPlus } from "../../../node_modules/react-icons/bs";
+import { RiShoppingCartFill } from "react-icons/ri";
+
 import { AiFillWindows } from "react-icons/ai";
 import { TbListDetails } from "react-icons/tb";
-import { RiShoppingCartFill } from "react-icons/ri";
 import { SiNintendogamecube } from "react-icons/si";
 import { FaXbox, FaPlaystation } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
