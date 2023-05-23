@@ -18,7 +18,7 @@ const PopularSlide = () => {
   const PopularGame = SlideData?.filter((el) => el.added > 4100);
   // console.log(PopularGame)
   const isAdded = useSelector((state) => state?.product.cart);
-  console.log(isAdded);
+  // console.log(isAdded);
   const dispatch = useDispatch();
   return (
     <>

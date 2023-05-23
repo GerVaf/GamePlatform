@@ -1,26 +1,43 @@
+import { data } from "autoprefixer";
 import React from "react";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { addUser } from "../../data/authSlice";
+import { useLoginMutation } from "../service/Api";
 
 const Login = () => {
-    const [email,setEmail] = useState('')
-    const [password,setPassword] = useState('')
-    const [loading,setLoading] = useState(false)
-    const navigate = useNavigate()
+  const [loading, setLoading] = useState(false);
+  const [email, setEmail] = useState("shunelae@gmail.com");
+  const [password, setPassword] = useState("soxyu555");
 
-    const login = async(e)=>{
-        e.preventDefault()
-        console.log(email,password)
+  const [login] = useLoginMutation()
+  const navigate = useNavigate();
+  const dispatch = useDispatch()
+
+  const loginHandler = async (e) => {
+    e.preventDefault();
+    const {data} = await login({email,password})
+    console.log('loginn',data)
+    dispatch(addUser({user: data?.user , token: data?.token }))
+    if(data?.success){
+      navigate("/")
     }
+  };
   return (
     <>
       <div className="flex justify-center h-[80vh] items-center">
-        <form onSubmit={login} className=" text-gray-200 bg-gray-700 p-16 rounded-md">
+        <form
+          onSubmit={loginHandler}
+          className=" text-gray-200 bg-gray-700 p-16 rounded-md"
+        >
           <div className="flex flex-col gap-2 mb-3">
             <label className="font-bold text-lg" htmlFor="name">
               Email
             </label>
-            <input value={email} onChange={(e)=>setEmail(e.target.value)}
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="py-3 outline-none text-black px-3 rounded-sm "
               placeholder="Enter your email"
               type="text"
@@ -32,7 +49,9 @@ const Login = () => {
             <label className="font-bold text-lg" htmlFor="name">
               Password
             </label>
-            <input value={password} onChange={(e)=>setPassword(e.target.value)}
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="py-3 outline-none text-black px-3 rounded-sm "
               placeholder="Enter your password"
               type="text"
@@ -46,7 +65,16 @@ const Login = () => {
               Login
             </button>
             <Link to={"/signup"}>
-              <p>Don't you have an account? <Link className="ml-3 text-red-500 font-bold hover:text-red-600" to={"/signup"}> Sign up</Link></p>
+              <p>
+                Don't you have an account?{" "}
+                <Link
+                  className="ml-3 text-red-500 font-bold hover:text-red-600"
+                  to={"/signup"}
+                >
+                  {" "}
+                  Sign up
+                </Link>
+              </p>
             </Link>
           </div>
         </form>

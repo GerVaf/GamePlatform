@@ -1,18 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Items from "./Home/Items";
 import Hero from "./Home/Hero";
 import SlideMenu from "./Home/SlideMenu";
 import PopularSlide from "./Home/PopularSlide";
 import GlassCard from "./Home/GlassCard";
-
-import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addProducts } from "../data/productsSlice";
-import axios from "axios";
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const Games = useSelector((state) => state.product.item);
-  
+  const [gameList, setGameList] = useState([]);
+  useEffect(() => {
+    setGameList(Games);
+  }, [gameList]);
+  const [searchTerm, setSearchTerm] = useState(null);
+  // console.log(searchTerm);
+  // console.log(gameList);
+  const [parent] = useAutoAnimate()
   return (
     <div className="flex  gap-16">
       {/* middleMenu */}
@@ -20,13 +24,27 @@ const Home = () => {
         <Hero />
         <PopularSlide />
         <div className="flex gap-5">
-          <SlideMenu />
+          <SlideMenu
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            gameList={gameList}
+          />
           <div className="text-white ">
             <p className="font-bold text-xl mb-3">CHOSE YOUR GAME TO PLAY</p>
-            <div className="flex flex-wrap justify-center gap-5 overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600  h-[80vh]">
-              {Games.map((cd) => {
-                return <Items key={cd.id} item={cd} />;
-              })}
+            <div ref={parent} className=" overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[50vw] h-[55vh]">
+              {gameList
+                ?.filter((product) => {
+                  if (searchTerm != null) {
+                    const filterGame = product?.genres.map((el) => el.id);
+                    // console.log(product);
+                    return filterGame.includes(searchTerm);
+                  } else {
+                    return gameList;
+                  }
+                })
+                ?.map((cd) => {
+                  return <Items  key={cd.id} item={cd} />;
+                })}
             </div>
           </div>
         </div>

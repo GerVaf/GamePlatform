@@ -13,7 +13,7 @@ const GlassCard = () => {
     state?.product.item.filter((el) => el.added < 14100)
   );
   const isAdded = useSelector((state) => state?.product.cart);
-  console.log(CardData);
+  // console.log(CardData);
   const dispatch = useDispatch();
 
   return (
@@ -21,7 +21,7 @@ const GlassCard = () => {
       <div className=" marqe flex flex-col gap-5">
         {CardData.map((card) => {
           return (
-            <div className=" w-96 p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
+            <div key={card.id} className=" w-96 p-4 mainbg rounded-3xl flex text-gray-300 gap-5">
               <img
                 className=" rounded-3xl w-40 object-cover"
                 src={card.background_image}

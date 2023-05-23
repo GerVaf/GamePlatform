@@ -1,21 +1,34 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useSignUpMutation } from "../service/Api";
 
 const Signup = () => {
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [password_confirmation, setConfirmPassword] = useState("");
 
-  const signUpHandler = (e) => {
+  const [signup,{error}] = useSignUpMutation()
+  const navigate = useNavigate("/")
+
+  const signUp = async (e) => {
     e.preventDefault();
-    console.log(name, email, password);
+    setLoading(true);
+    const user = { name, email, password,password_confirmation };
+    // console.log(user);
+    const data = await signup(user)
+    console.log(data)
+    console.log(data?.data.success);
+    if(data?.data.success){
+      navigate('/login')
+    }
   };
   return (
     <>
       <div className="flex justify-center h-[80vh] items-center">
         <form
-          onSubmit={signUpHandler}
+          onSubmit={signUp}
           className=" text-gray-200 bg-gray-700 p-16 rounded-md"
         >
           <div className="flex flex-col gap-2 mb-3">
@@ -60,9 +73,23 @@ const Signup = () => {
               id=""
             />
           </div>
+          <div className="flex flex-col gap-2 mb-3">
+            <label className="font-bold text-lg" htmlFor="name">
+              Confirm Password
+            </label>
+            <input
+              value={password_confirmation}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="py-3 outline-none text-black px-3 rounded-sm "
+              placeholder="Enter your password"
+              type="text"
+              name=""
+              id=""
+            />
+          </div>
 
           <div className="flex flex-col justify-around items-center mt-5 gap-5">
-            <button type="submit" className="bg-gradient-to-r shadow-blue-500/50 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white px-3 w-[100%] py-3 rounded-lg">
+            <button className="bg-gradient-to-r shadow-blue-500/50 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white px-3 w-[100%] py-3 rounded-lg">
               Create account
             </button>
 
