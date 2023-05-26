@@ -4,7 +4,7 @@ import Hero from "./Home/Hero";
 import SlideMenu from "./Home/SlideMenu";
 import PopularSlide from "./Home/PopularSlide";
 import GlassCard from "./Home/GlassCard";
-import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { useSelector } from "react-redux";
 
 const Home = () => {
@@ -16,11 +16,11 @@ const Home = () => {
   const [searchTerm, setSearchTerm] = useState(null);
   // console.log(searchTerm);
   // console.log(gameList);
-  const [parent] = useAutoAnimate()
+  const [parent] = useAutoAnimate();
   return (
     <div className="flex  gap-16">
       {/* middleMenu */}
-      <div className=" w-8/12 flex flex-col gap-10 ">
+      <div className=" w-8/12 flex h-[150vh] flex-col gap-10 ">
         <Hero />
         <PopularSlide />
         <div className="flex gap-5">
@@ -31,7 +31,10 @@ const Home = () => {
           />
           <div className="text-white ">
             <p className="font-bold text-xl mb-3">CHOSE YOUR GAME TO PLAY</p>
-            <div ref={parent} className=" overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[50vw] h-[55vh]">
+            <div
+              ref={parent}
+              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[50vw] h-[55vh]"
+            >
               {gameList
                 ?.filter((product) => {
                   if (searchTerm != null) {
@@ -43,7 +46,7 @@ const Home = () => {
                   }
                 })
                 ?.map((cd) => {
-                  return <Items  key={cd.id} item={cd} />;
+                  return <Items key={cd.id} item={cd} />;
                 })}
             </div>
           </div>
@@ -51,7 +54,7 @@ const Home = () => {
       </div>
 
       {/* right menu */}
-      <div className="w-4/12 h-[170vh] overflow-hidden">
+      <div className="w-4/12 h-[150vh] overflow-hidden">
         <p className="text-white font-bold text-xl mb-3">
           YOU CAN GET DOWN FREE
         </p>

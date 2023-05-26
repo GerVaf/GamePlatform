@@ -38,6 +38,19 @@ body {
   );
 }
 
-.active{
-  @apply bg-gradient-to-r shadow-blue-500/50 shadow-lg from-cyan-400 to-blue-600 text-white text-2xl  rounded-2xl
+.active {
+  @apply bg-gradient-to-r shadow-blue-500/50 shadow-lg from-cyan-400 to-blue-600 text-white text-2xl  rounded-2xl;
+}
+.activate {
+  @apply border-l-[white] bg-[#586063];
+}
+
+.video-cuz {
+  background: rgb(1, 5, 8);
+  background: linear-gradient(
+    180deg,
+    rgba(1, 5, 8, 1) 0%,
+    rgba(4, 4, 22, 0) 50%,
+    rgba(1, 5, 8, 1) 100%
+  );
 }
