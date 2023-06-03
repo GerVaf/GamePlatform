@@ -8,6 +8,8 @@ import {
   SiNintendogamecube,
   SiScrollreveal,
 } from "../../node_modules/react-icons/si";
+import { Carousel } from "@mantine/carousel";
+import { Image } from "@mantine/core";
 
 const Detail_all = () => {
   const gameDetail = useSelector((state) => state?.product.item);
@@ -19,7 +21,7 @@ const Detail_all = () => {
         {gameDetail.map((item) => {
           return (
             <div className="flex">
-              <div className="w-11/12 flex flex-col gap-5 border-b-2 py-5">
+              <div className="w-11/12 flex flex-col gap-5 border-slate-500 border-b py-5">
                 {/* top */}
                 <div className=" flex text-white gap-5">
                   {/* left  */}
@@ -102,69 +104,79 @@ const Detail_all = () => {
 
                 {/* bottom  */}
                 <div className="text-white flex flex-col gap-5">
-                  {/* smiliar games */}
-                  <div className="flex flex-col gap-2">
-                    <p className="text-lg font-bold">SIMILAR GAMES</p>
-                    <div className="flex  gap-3  text-md">
-                      <Marquee
-                        className="flex h-72 "
-                        autoFill={true}
-                        speed={70}
-                        pauseOnHover={true}
-                        gradientColor={false}
-                      >
-                        {item.tags?.map((hilight) => {
-                          return (
-                            <div
-                              key={hilight.id}
-                              className=" mx-2 flex  gap-3 font-bold"
-                            >
-                              <img
-                                className=" h-56 object-cover rounded-md"
-                                src={hilight.image_background}
-                                alt=""
-                              />
-                            </div>
-                          );
-                        })}
-                      </Marquee>
-                    </div>
+                  {/* game hilight */}
+                  <div className=" flex flex-col gap-2">
+                    <p className="text-lg font-bold">GAME HILIGHT</p>
+                    <Carousel
+                      withIndicators
+                      height={200}
+                      slideSize="33.333333%"
+                      slideGap="md"
+                      loop
+                      align="start"
+                      slidesToScroll={3}
+                      styles={{
+                        control: {
+                          color: "red",
+                          borderBlockColor: "red",
+                        },
+                      }}
+                    >
+                      {item?.short_screenshots.map((dev) => {
+                        return (
+                          <Carousel.Slide>
+                            <Image src={dev.image} />
+                          </Carousel.Slide>
+                        );
+                      })}
+                    </Carousel>
                   </div>
 
                   {/* hilight and tags */}
-                  <p className="text-lg font-bold">GAME HILIGHT AND TAGS</p>
+                  <p className="text-lg font-bold">TAGS</p>
                   <p className="gap-5  flex justify-center items-center font-medium">
                     View to scroll <SiScrollreveal />
                   </p>
 
-                  <div className="flex gap-5">
+                  <div className="flex flex-col gap-5">
                     {/* tags */}
-                    <div className="w-6/12 flex flex-wrap h-96 gap-5  text-md overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600">
+                    <div className=" flex flex-wrap h-32 gap-5  text-md overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600">
                       {item?.tags.map((tag) => {
                         return (
-                          <button className="px-3 py-1 rounded-sm mainbg ">
-                            {tag.name}
-                          </button>
+                          <div>
+                            <button className="px-3 py-1 rounded-sm mainbg ">
+                              {tag.name}
+                            </button>
+                          </div>
                         );
                       })}
                     </div>
-                    {/* game hilight */}
-                    <div className="w-6/12 flex flex-col gap-2">
-                      <div className=" h-96 gap-5 flex flex-col text-md overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 ">
-                        {item?.short_screenshots.map((dev) => {
-                          return (
-                            <div
-                              className="flex shadow-md rounded-t-md flex-col gap-2 items-center"
-                              key={dev.id}
-                            >
-                              <img
-                                className=" object-top rounded-t-md w-[100%] h-96 object-cover"
-                                src={dev.image}
-                                alt=""
-                              />
-                            </div>
-                          );
-                        })}
+                    {/* smiliar games */}
+                    <div className="flex flex-col gap-2">
+                      <p className="text-lg font-bold">SIMILAR GAMES</p>
+                      <div className="flex  gap-3  text-md">
+                        <Marquee
+                          className="flex h-72 "
+                          autoFill={true}
+                          speed={70}
+                          pauseOnHover={true}
+                          gradientColor={false}
+                        >
+                          {item.tags?.map((hilight) => {
+                            return (
+                              <div
+                                key={hilight.id}
+                                className=" mx-2 flex  gap-3 font-bold"
+                              >
+                                <img
+                                  className=" h-56 object-cover rounded-md"
+                                  src={hilight.image_background}
+                                  alt=""
+                                />
+                              </div>
+                            );
+                          })}
+                        </Marquee>
                       </div>
                     </div>
                   </div>

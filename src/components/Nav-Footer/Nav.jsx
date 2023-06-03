@@ -6,10 +6,11 @@ import {
 } from "../../../node_modules/react-icons/ri";
 import { BiBell } from "../../../node_modules/react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useLogOutMutation } from "../service/Api";
+import { removeUser } from "../../data/authSlice";
 const Nav = () => {
   const [data, setData] = useState({});
 
@@ -24,18 +25,19 @@ const Nav = () => {
   const amount = useSelector((state) => state.product.cart);
   const userData = useSelector((state) => state.auth.user);
   const token = useSelector((state) => state.auth.token);
+  const dispatch = useDispatch();
   const [logout] = useLogOutMutation();
 
   const navigate = useNavigate();
   const logoutHandler = async () => {
     const data = await logout(token);
+    dispatch(removeUser());
     console.log(data);
     navigate("/login");
   };
 
-  const profileData = useSelector((state) => console.log(state));
   return (
-    <div className=" p-5 flex items-center">
+    <div className=" p-5 flex items-center mb-5">
       <div className="text-white w-1/12 font-bold text-2xl flex items-center gap-4 justify-center">
         <RiGlobalFill />
         <p>DARK</p>
@@ -79,18 +81,20 @@ const Nav = () => {
 
         {/* profile info */}
         <div className="mx-5 avatar flex gap-5 items-center text-white">
-          <div className=" w-24 border-2 border-[#65a1f0] flex flex-col gap-2 rounded-2xl">
+          <div className=" border-2 border-[#65a1f0] flex flex-col gap-2 rounded-2xl">
             <img className="h-20 object-cover rounded-2xl" src={profile} />
           </div>
           <div className="text-lg flex flex-col gap-2">
             <p className="text-sm">{userData?.name}</p>
             <p className="text-sm">{userData?.created_at.substring(0, 10)}</p>
-            <button
-              onClick={logoutHandler}
-              className="text-sm bg-gradient-to-r shadow-blue-500/50 shadow-lg hover:from-red-500 hover:to-rose-400 to-rose-500 from-red-600 text-white rounded-sm py-1 "
-            >
-              LogOut
-            </button>
+            {token && (
+              <button
+                onClick={logoutHandler}
+                className="text-sm bg-gradient-to-r shadow-red-500/80 shadow-lg hover:from-red-500 hover:to-rose-400 to-rose-500 from-red-600 text-white rounded-sm py-1 "
+              >
+                LogOut
+              </button>
+            )}
           </div>
         </div>
       </div>

@@ -34,6 +34,7 @@ const Hero = () => {
           width="60%"
           height="100%"
           playing={true}
+          controls
         />
         <div className="ml-10 flex flex-col justify-between gap-5">
           <h1 className="font-bold text-xl">CyberPunk</h1>
@@ -65,7 +66,7 @@ const Hero = () => {
               </p>
             </div>
           </div>
-          <button className=" bottom-0 bg-gradient-to-r hover:shadow-rose-800/100 shadow-red-500/50 shadow-lg from-rose-500 to-red-600 hover:from-rose-400 hover:to-rose-600 text-white px-3 py-3 rounded-md text-xl">
+          <button className=" bottom-0 bg-gradient-to-r hover:shadow-rose-800/100 shadow-red-500/50 shadow-lg from-rose-500 to-red-600 hover:from-rose-400 hover:to-rose-600 text-white px-3 py-3 rounded-md text-sm">
             ADD TO CART AND PLAY NOW
           </button>
         </div>

@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { addProducts } from "./data/productsSlice";
 import Loading from "./components/Loading/Loading";
+import Guard from "./Guard";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -49,10 +50,10 @@ const App = () => {
             </div>
             <div className=" w-11/12">
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/cart" element={<Cart />} />
-                <Route path="/detail_all" element={<Detail_all />} />
-                <Route path="/detail/:slug" element={<Detail />} />
+                <Route path="/" element={<Guard><Home /></Guard>} />
+                <Route path="/cart" element={<Guard><Cart /></Guard>} />
+                <Route path="/detail_all" element={<Guard><Detail_all /></Guard>} />
+                <Route path="/detail/:slug" element={<Guard><Detail /></Guard>} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
               </Routes>
