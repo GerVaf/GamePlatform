@@ -18,7 +18,7 @@ const Home = () => {
   // console.log(gameList);
   const [parent] = useAutoAnimate();
   return (
-    <div className="flex  gap-16">
+    <div className="flex  gap-10">
       {/* middleMenu */}
       <div className=" w-8/12 flex h-[150vh] flex-col gap-10 ">
         <Hero />

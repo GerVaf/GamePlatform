@@ -22,7 +22,7 @@ const PopularSlide = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <div className="text-white text-xl font-bold flex flex-col gap-5">
+      <div className="text-white  text-xl font-bold flex flex-col gap-5">
         <p>NEWEST GAMES</p>
         <div>
           <Carousel

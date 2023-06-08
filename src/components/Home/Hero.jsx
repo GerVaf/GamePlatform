@@ -25,48 +25,52 @@ const Hero = () => {
     //   </div>
     // </div>
     <>
-      <div className="flex video-cuz z-20 text-white w-[100%] object-cover">
-        <ReactPlayer
-          volume={0.5}
-          loop={true}
-          stopOnUnmount={true}
-          url={video}
-          width="60%"
-          height="100%"
-          playing={true}
-          controls
-        />
-        <div className="ml-10 flex flex-col justify-between gap-5">
+      <div className="flex justify-around video-cuz z-20 text-white">
+        <div className="h-[300px]">
+          <ReactPlayer
+            volume={0.5}
+            loop={true}
+            stopOnUnmount={true}
+            url={video}
+            width="80%"
+            height="100%"
+            playing={true}
+            controls
+          />
+        </div>
+        <div className="flex flex-col justify-between gap-x-5">
           <h1 className="font-bold text-xl">CyberPunk</h1>
-          <div className="ml-10">
-            <p className="font-bold text-lg mb-5">
+          <div className="">
+            <p className="font-semibold text-lg mb-5">
               <span className="text-red-600">New</span> Release
             </p>
-            <div className="flex flex-col gap-5 ">
+            <div className="flex flex-col gap-x-5 gap-y-2 mb-3">
               <p>
-                <span className="font-bold text-MD ml-5">GAME TYPE : </span>
+                <span className="font-semibold text-MD ml-5">GAME TYPE : </span>
                 <br />
-                <span className="text-red-500 ml-10 text-sm font-bold">
+                <span className="text-red-500 ml-10 text-sm font-semibold">
                   ACTION ADVENTURE RPG
                 </span>
               </p>
               <p>
-                <span className="font-bold text-MD ml-5">ADDED COUNT : </span>
+                <span className="font-semibold text-MD ml-5">ADDED COUNT : </span>
                 <br />
-                <span className="text-red-500 ml-10 text-sm font-bold">
+                <span className="text-red-500 ml-10 text-sm font-semibold">
                   1135
                 </span>
               </p>
               <p>
-                <span className="font-bold text-MD ml-5">AVAIABLE PLATFORM : </span>
+                <span className="font-semibold text-MD ml-5">
+                  AVAIABLE PLATFORM :{" "}
+                </span>
                 <br />
-                <span className="text-red-500 ml-10 text-sm font-bold">
-                  PC  PLAYSTATION X-BOX
+                <span className="text-red-500 ml-10 text-sm font-semibold">
+                  PC PLAYSTATION X-BOX
                 </span>
               </p>
             </div>
           </div>
-          <button className=" bottom-0 bg-gradient-to-r hover:shadow-rose-800/100 shadow-red-500/50 shadow-lg from-rose-500 to-red-600 hover:from-rose-400 hover:to-rose-600 text-white px-3 py-3 rounded-md text-sm">
+          <button className=" bottom-0 bg-gradient-to-r hover:shadow-rose-800/100 shadow-red-500/50 shadow-lg from-rose-500 to-red-600 hover:from-rose-400 hover:to-rose-600 text-white p-2 rounded-md text-sm">
             ADD TO CART AND PLAY NOW
           </button>
         </div>
