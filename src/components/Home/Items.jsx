@@ -1,15 +1,15 @@
 import React from "react";
-import { BsCartPlus } from "../../../node_modules/react-icons/bs";
+import { BsCartPlus } from "react-icons/bs";
 import { RiShoppingCartFill } from "react-icons/ri";
-
 import { AiFillWindows } from "react-icons/ai";
 import { TbListDetails } from "react-icons/tb";
 import { SiNintendogamecube } from "react-icons/si";
-import { FaXbox, FaPlaystation } from "react-icons/fa";
+import { FaXbox, FaPlaystation, FaTruckLoading } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addItems, removeFromCart } from "../../data/productsSlice";
 import { Link } from "react-router-dom";
-
+import LazyLoad from "react-lazyload";
+import Loading from "../Loading/Loading";
 const ItemByDate = ({ item }) => {
   const isAdded = useSelector((state) => state?.product.cart);
   const dispatch = useDispatch();
@@ -43,11 +43,15 @@ const ItemByDate = ({ item }) => {
 
         {/* img and cate  */}
         <div className="flex gap-10">
-          <img
-            className=" rounded-l-md w-52 h-60 object-cover"
-            src={item.background_image}
-            alt=""
-          />
+          <div className="rounded-l-md flex justify-center items-center bg-zinc-700 w-52 h-60 object-cover">
+            <LazyLoad once placeholder={<Loading />}>
+              <img
+                className=" rounded-l-md w-52 h-60 object-cover"
+                src={item.background_image}
+                alt=""
+              />
+            </LazyLoad>
+          </div>
           <div className="mt-10 flex flex-col gap-3 ">
             <div>
               <h1 className="font-bold text-lg">{item.name}</h1>
@@ -75,7 +79,7 @@ const ItemByDate = ({ item }) => {
             </p>
 
             {/* platform icon  */}
-            <div className=" text-2xl flex flex-col gap-3">
+            <div className="text-2xl flex flex-col gap-3">
               <div className="flex gap-3 ">
                 {item.parent_platforms.find((el) =>
                   el.platform.name.includes("PC")

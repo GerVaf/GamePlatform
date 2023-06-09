@@ -10,7 +10,7 @@ const GlassCard = () => {
     state?.product.item.filter((el) => el.added < 14100)
   );
 
-
+// console.log(CardData)
   return (
     <>
       <div className=" marqe flex flex-col gap-5">

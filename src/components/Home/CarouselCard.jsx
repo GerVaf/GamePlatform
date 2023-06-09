@@ -6,12 +6,13 @@ import { BsCartPlus } from "../../../node_modules/react-icons/bs";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { useDispatch, useSelector } from "react-redux";
 import "./GlassCard.css";
+import { Card } from "@mantine/core";
 
 const CarouselCard = (props) => {
-  const { id, background_image, genres, name, added_by_status } = props;
+  const { id, background_image, genres, name, slug , added_by_status } = props;
   const isAdded = useSelector((state) => state?.product.cart);
   // console.log(CardData);
-  //   console.log(isAdded);
+    // console.log(isAdded);
   const dispatch = useDispatch();
   return (
     <div key={id} className=" p-3 mainbg rounded-3xl flex text-gray-300 gap-5">
@@ -40,7 +41,8 @@ const CarouselCard = (props) => {
           </div>
         </div>
         <div>
-          {isAdded?.find((el) => el?.slug == "slug") ? (
+          {isAdded?.find((el) => el?.slug == slug) ? 
+          (
             <button
               onClick={() => dispatch(removeFromCart(props))}
               className="flex items-center  text-rose-600 top-2 right-3"
