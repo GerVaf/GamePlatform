@@ -23,7 +23,7 @@ const SlideMenu = ({ setSearchTerm }) => {
 
   return (
     <>
-      <ul className="text-white flex flex-col font-bold gap-4 items-start cursor-pointer py-16">
+      <ul className="text-white cursor-pointer flex flex-wrap text-sm gap-5 py-5 sm:flex sm:flex-col font-bold sm:gap-4 sm:items-start  sm:py-16">
         {bar.map((el, index) => {
           const isActive = index === activeIndex;
           return (
@@ -32,7 +32,7 @@ const SlideMenu = ({ setSearchTerm }) => {
               onClick={() => handleClick(index)}
               className={`${
                 isActive ? "activate" : ""
-              } w-[100%] hover:border-l-[white] border-l-2 border-transparent hover:bg-[#404547] transition duration-300 px-3 py-2`}
+              } hover:border-l-[white] w-[150px] border-l-2 border-transparent hover:bg-[#404547] transition duration-300 px-3 py-2`}
             >
               {el.title}
             </li>

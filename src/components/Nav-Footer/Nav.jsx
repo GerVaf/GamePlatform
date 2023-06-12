@@ -1,9 +1,8 @@
 import React from "react";
 import profile from "../../data/img/profile.webp";
-import {
-  RiGlobalFill,
-  RiShoppingCartFill,
-} from "../../../node_modules/react-icons/ri";
+import { RiShoppingCartFill } from "../../../node_modules/react-icons/ri";
+
+import { FaSlackHash } from "../../../node_modules/react-icons/fa";
 import { BiBell } from "../../../node_modules/react-icons/bi";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -38,11 +37,12 @@ const Nav = () => {
 
   return (
     <div className="bg-[#000000]">
-      <div className=" container px-5 mx-auto py-2 justify-between flex items-center mb-5">
-        <div className="text-white font-bold text-2xl flex items-center gap-2 justify-center">
-          <RiGlobalFill />
-          <p>DARK</p>
+      <div className=" container sm:px-5 mx-auto py-2 justify-between flex items-center mb-5">
+        <div className="text-white font-bold  sm:text-2xl flex items-center gap-2 justify-center">
+          <FaSlackHash />
+          <p>HashTag</p>
         </div>
+
         {/* auth */}
         {/* <div className=" w-7/12 flex justify-center items-center">
           <div className="text-white flex gap-10 text-xl">
@@ -54,12 +54,14 @@ const Nav = () => {
             </Link>
           </div>
         </div> */}
-        <div className=" text-white flex text-3xl  justify-around items-center">
-          <div className="flex gap-10">
+
+        {/* shop and root */}
+        <div className=" text-white justify-center flex sm:text-3xl items-center">
+          <div className="flex gap-5 items-center sm:gap-10">
             <Link to={"/"}>
               <button
                 type="button"
-                className="bg-gradient-to-r shadow-blue-500/50 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white text-2xl p-2 rounded-2xl"
+                className="bg-gradient-to-r shadow-blue-500/60 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white sm:text-2xl p-2 rounded-md text-xl sm:rounded-xl"
               >
                 <BiBell />
               </button>
@@ -67,7 +69,7 @@ const Nav = () => {
             <Link to={"/cart"}>
               <button
                 type="button"
-                className="relative bg-gradient-to-r shadow-blue-500/50 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white text-2xl p-2 rounded-2xl"
+                className="relative bg-gradient-to-r shadow-blue-500/60 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white sm:text-2xl p-2 rounded-md text-xl sm:rounded-xl"
               >
                 {amount.length > 0 ? (
                   <span className=" rounded-[50%] w-6 h-6 flex items-center justify-center bg-red-400 text-white text-sm top-[-5px] right-[-10px] absolute">

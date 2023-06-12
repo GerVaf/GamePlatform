@@ -39,7 +39,7 @@ body {
 }
 
 .active {
-  @apply bg-gradient-to-r shadow-blue-500/50 shadow-lg from-cyan-400 to-blue-600 text-white text-2xl  rounded-2xl;
+  @apply bg-gradient-to-r shadow-blue-500/50 shadow-lg from-cyan-400 to-blue-600 text-white text-2xl rounded-xl sm:rounded-2xl;
 }
 .activate {
   @apply border-l-[white] bg-[#586063];

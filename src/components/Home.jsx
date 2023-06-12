@@ -18,22 +18,22 @@ const Home = () => {
   // console.log(gameList);
   const [parent] = useAutoAnimate();
   return (
-    <div className="flex  gap-10">
+    <div className="sm:flex sm:gap-10">
       {/* middleMenu */}
-      <div className=" w-8/12 flex h-[150vh] flex-col gap-10 ">
+      <div className=" sm:w-8/12 sm:flex sm:h-[150vh] sm:flex-col sm:gap-10 ">
         <Hero />
         <PopularSlide />
-        <div className="flex gap-5">
+        <div className="sm:flex sm:gap-5">
           <SlideMenu
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
             gameList={gameList}
           />
           <div className="text-white ">
-            <p className="font-bold text-xl mb-3">CHOSE YOUR GAME TO PLAY</p>
+            <p className="font-bold sm:text-xl mb-3">CHOSE YOUR GAME TO PLAY</p>
             <div
               ref={parent}
-              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[50vw] h-[55vh]"
+              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[100vw] sm:w-[50vw] h-[50vh] sm:h-[55vh]"
             >
               {gameList
                 ?.filter((product) => {
@@ -54,7 +54,7 @@ const Home = () => {
       </div>
 
       {/* right menu */}
-      <div className="w-4/12 h-[150vh] overflow-hidden">
+      <div className=" hidden sm:block sm:w-4/12 sm:h-[150vh] overflow-hidden">
         <p className="text-white font-bold text-xl mb-3">
           YOU CAN GET DOWN FREE
         </p>

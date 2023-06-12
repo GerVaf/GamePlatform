@@ -43,21 +43,52 @@ const App = () => {
         <div>
           <Nav />
 
-          <div className="flex">
+          <div className="flex relative">
             {/* left Menu  */}
-            <div className=" sticky top-20 w-1/12 h-[100vh] flex justify-center">
+            <div className=" hidden h-[40vh] sticky top-20 w-1/12 sm:flex justify-center">
               <Menu />
             </div>
-            <div className=" w-11/12">
+            <div className=" w-12/12 sm:w-11/12">
               <Routes>
-                <Route path="/" element={<Guard><Home /></Guard>} />
-                <Route path="/cart" element={<Guard><Cart /></Guard>} />
-                <Route path="/detail_all" element={<Guard><Detail_all /></Guard>} />
-                <Route path="/detail/:slug" element={<Guard><Detail /></Guard>} />
+                <Route
+                  path="/"
+                  element={
+                    <Guard>
+                      <Home />
+                    </Guard>
+                  }
+                />
+                <Route
+                  path="/cart"
+                  element={
+                    <Guard>
+                      <Cart />
+                    </Guard>
+                  }
+                />
+                <Route
+                  path="/detail_all"
+                  element={
+                    <Guard>
+                      <Detail_all />
+                    </Guard>
+                  }
+                />
+                <Route
+                  path="/detail/:slug"
+                  element={
+                    <Guard>
+                      <Detail />
+                    </Guard>
+                  }
+                />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
               </Routes>
             </div>
+          </div>
+          <div className=" z-50 block sm:hidden w-[100%] fixed bottom-0">
+            <Menu/>
           </div>
         </div>
       )}

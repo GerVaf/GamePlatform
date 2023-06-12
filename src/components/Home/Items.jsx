@@ -18,7 +18,7 @@ const ItemByDate = ({ item }) => {
     <>
       <div className=" select-none mb-5 bg-gradient-to-r to-gray-500 from-zinc-800  hover:bg-gradient-to-r hover:to-gray-600 hover:from-zinc-900 text-white group relative overflow-hidden rounded-md">
         {/* cart and detail  */}
-        <div className="text-slate-300 text-2xl">
+        <div className="text-slate-300 text-lg sm:text-2xl">
           <Link to={`/detail/${item.slug}`}>
             <button className=" hover:text-rose-600 absolute top-2 right-14">
               <TbListDetails />
@@ -42,8 +42,9 @@ const ItemByDate = ({ item }) => {
         </div>
 
         {/* img and cate  */}
-        <div className="flex gap-10">
-          <div className="rounded-l-md flex justify-center items-center bg-zinc-700 w-52 h-60 object-cover">
+        <div className="flex gap-3 sm:gap-10">
+          {/* img  */}
+          <div className="rounded-l-md flex justify-center items-center bg-zinc-700 w-[50%] h-56 sm:w-52 sm:h-60 object-cover">
             <LazyLoad once placeholder={<Loading />}>
               <img
                 className=" rounded-l-md w-52 h-60 object-cover"
@@ -52,34 +53,36 @@ const ItemByDate = ({ item }) => {
               />
             </LazyLoad>
           </div>
-          <div className="mt-10 flex flex-col gap-3 ">
+          {/* cate  */}
+          <div className="mt-10 flex w-[40%] flex-col gap-3 ">
             <div>
-              <h1 className="font-bold text-lg">{item.name}</h1>
+              <h1 className="font-bold text-[10px] sm:text-lg">{item.name}</h1>
               <hr className="w-14 border" />
             </div>
             <div className="flex flex-col gap-3 font-semibold">
-              <p className="ml-5 text-sm">
+              <p className="ml-5 text-[8px] sm:text-sm">
                 Release Date <br /> {item.released}
               </p>
-              <p className="ml-5 text-sm">
+              <p className="ml-5 text-[8px] sm:text-sm">
                 Updated Time <br /> {item.updated}
               </p>
-              <p className="ml-5 text-sm">
+              <p className="ml-5 text-[8px] sm:text-sm">
                 Added <br /> {item.added}
               </p>
             </div>
           </div>
         </div>
+
         {/* animation  */}
-        <div className=" transition-all duration-500 group-hover:translate-y-0 translate-y-96 bottom-0 w-52 flex flex-col justify-center p-4 h-2/4 font-bold text-gray-100 card absolute">
+        <div className=" transition-all duration-500 group-hover:translate-y-0 translate-y-96 bottom-0 sm:w-52 w-[50%] flex flex-col justify-center p-4 h-2/4 font-bold text-gray-100 card absolute">
           <div className="flex justify-between items-center ">
             {/* price  */}
-            <p className="text-md">
-              {item.added < 14100 ? "Free" : `$${item.metacritic}`}{" "}
+            <p className="text-md sm:text-md">
+              {item.added < 14100 ? "Free" : `$${item.metacritic}`}
             </p>
 
             {/* platform icon  */}
-            <div className="text-2xl flex flex-col gap-3">
+            <div className="sm:text-2xl flex flex-col gap-3">
               <div className="flex gap-3 ">
                 {item.parent_platforms.find((el) =>
                   el.platform.name.includes("PC")
