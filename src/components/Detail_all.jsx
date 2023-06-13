@@ -17,7 +17,7 @@ const Detail_all = () => {
 
   return (
     <>
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-16 overflow-hidden">
         {gameDetail.map((item) => {
           return (
             <div className="flex">

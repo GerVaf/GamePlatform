@@ -25,49 +25,50 @@ const Hero = () => {
     //   </div>
     // </div>
     <>
-      <div className="flex justify-around video-cuz z-20 text-white">
-        <div className="h-[300px]">
+      <div className="flex flex-wrap  items-center lg:justify-around justify-center  my-10 video-cuz z-20 text-white">
+        <div className="lg:h-[300px] md:h-[400px]">
           <ReactPlayer
             volume={0.5}
             loop={true}
             stopOnUnmount={true}
             url={video}
-            width="80%"
+            width="95%"
             height="100%"
             // playing={true}
             controls
           />
         </div>
-        <div className="flex flex-col justify-between gap-x-5">
-          <h1 className="font-bold text-xl">CyberPunk</h1>
-          <div className="">
-            <p className="font-semibold text-lg mb-5">
+        <div className="flex flex-col justify-between gap-x-0  lg:gap-x-5">
+          <div className="lg:block flex">
+            <h1 className="font-bold text-xl">CyberPunk</h1>
+            <p className="font-semibold text-lg ml-5 mb-5">
               <span className="text-red-600">New</span> Release
             </p>
-            <div className="flex flex-col gap-x-5 gap-y-2 mb-3">
-              <p>
-                <span className="font-semibold text-MD ml-5">GAME TYPE : </span>
-                <br />
+          </div>
+          <div className="">
+            <div className="flex flex-col  gap-y-2 mb-3">
+              <div className="lg:block flex items-center">
+                <h2 className="font-semibold text-lg">GAME TYPE : </h2>
                 <span className="text-red-500 ml-10 text-sm font-semibold">
                   ACTION ADVENTURE RPG
                 </span>
-              </p>
-              <p>
-                <span className="font-semibold text-MD ml-5">ADDED COUNT : </span>
+              </div>
+              <div className="lg:block flex items-center">
+                <span className="font-semibold text-lg">ADDED COUNT : </span>
                 <br />
                 <span className="text-red-500 ml-10 text-sm font-semibold">
                   1135
                 </span>
-              </p>
-              <p>
-                <span className="font-semibold text-MD ml-5">
+              </div>
+              <div className="lg:block flex items-center">
+                <span className="font-semibold text-lg ">
                   AVAIABLE PLATFORM :{" "}
                 </span>
                 <br />
-                <span className="text-red-500 ml-10 text-sm font-semibold">
+                <span className="text-red-500 text-sm font-semibold">
                   PC PLAYSTATION X-BOX
                 </span>
-              </p>
+              </div>
             </div>
           </div>
           <button className=" bottom-0 bg-gradient-to-r hover:shadow-rose-800/100 shadow-red-500/50 shadow-lg from-rose-500 to-red-600 hover:from-rose-400 hover:to-rose-600 text-white p-2 rounded-md text-sm">

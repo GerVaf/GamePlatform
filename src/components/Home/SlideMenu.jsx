@@ -20,7 +20,6 @@ const SlideMenu = ({ setSearchTerm }) => {
     const selectedType = bar[index].id === null ? null : Number(bar[index].id);
     setSearchTerm(selectedType);
   };
-
   return (
     <>
       <ul className="text-white cursor-pointer flex flex-wrap text-sm gap-5 py-5 sm:flex sm:flex-col font-bold sm:gap-4 sm:items-start  sm:py-16">

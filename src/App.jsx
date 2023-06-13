@@ -45,7 +45,7 @@ const App = () => {
 
           <div className="flex relative">
             {/* left Menu  */}
-            <div className=" hidden h-[40vh] sticky top-20 w-1/12 sm:flex justify-center">
+            <div className=" hidden h-[40vh] sticky top-28 w-1/12 sm:flex justify-center">
               <Menu />
             </div>
             <div className=" w-12/12 sm:w-11/12">

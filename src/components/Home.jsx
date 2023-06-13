@@ -18,9 +18,9 @@ const Home = () => {
   // console.log(gameList);
   const [parent] = useAutoAnimate();
   return (
-    <div className="sm:flex sm:gap-10">
+    <div className="sm:flex justify-center sm:gap-5">
       {/* middleMenu */}
-      <div className=" sm:w-8/12 sm:flex sm:h-[150vh] sm:flex-col sm:gap-10 ">
+      <div className=" sm:w-10/12 sm:flex sm:h-[150vh] sm:flex-col ">
         <Hero />
         <PopularSlide />
         <div className="sm:flex sm:gap-5">
@@ -29,11 +29,13 @@ const Home = () => {
             setSearchTerm={setSearchTerm}
             gameList={gameList}
           />
-          <div className="text-white ">
-            <p className="font-bold sm:text-xl mb-3">CHOSE YOUR GAME TO PLAY</p>
+          <div className="text-white">
+            <p className="font-bold sm:text-xl py-2 my-3">
+              CHOSE YOUR GAME TO PLAY
+            </p>
             <div
               ref={parent}
-              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[100vw] sm:w-[50vw] h-[50vh] sm:h-[55vh]"
+              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[100vw] sm:w-[50vw] lg:w-[60vw] h-[50vh] sm:h-[70vh]"
             >
               {gameList
                 ?.filter((product) => {
@@ -54,7 +56,7 @@ const Home = () => {
       </div>
 
       {/* right menu */}
-      <div className=" hidden sm:block sm:w-4/12 sm:h-[150vh] overflow-hidden">
+      <div className=" hidden lg:block sm:w-4/12 sm:h-[140vh] overflow-hidden">
         <p className="text-white font-bold text-xl mb-3">
           YOU CAN GET DOWN FREE
         </p>
