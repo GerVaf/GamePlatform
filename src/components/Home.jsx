@@ -20,7 +20,7 @@ const Home = () => {
   return (
     <div className="sm:flex justify-center sm:gap-5">
       {/* middleMenu */}
-      <div className=" sm:w-10/12 sm:flex sm:h-[150vh] sm:flex-col ">
+      <div className=" sm:w-8/12 sm:flex sm:flex-col ">
         <Hero />
         <PopularSlide />
         <div className="sm:flex sm:gap-5">
@@ -35,7 +35,7 @@ const Home = () => {
             </p>
             <div
               ref={parent}
-              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[100vw] sm:w-[50vw] lg:w-[60vw] h-[50vh] sm:h-[70vh]"
+              className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[100vw] sm:w-[100vh] lg:w-[100vh]  h-[50vh] sm:h-[50vh]"
             >
               {gameList
                 ?.filter((product) => {

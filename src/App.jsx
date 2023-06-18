@@ -15,6 +15,7 @@ import axios from "axios";
 import { addProducts } from "./data/productsSlice";
 import Loading from "./components/Loading/Loading";
 import Guard from "./Guard";
+import ChooseType from "./components/ChooseType";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -45,10 +46,10 @@ const App = () => {
 
           <div className="flex relative">
             {/* left Menu  */}
-            <div className=" hidden h-[40vh] sticky top-28 w-1/12 sm:flex justify-center">
+            <div className=" hidden h-[40vh] sticky top-28 sm:w-1/12 sm:flex justify-center">
               <Menu />
             </div>
-            <div className=" w-12/12 sm:w-11/12">
+            <div className=" w-12/12 sm:w-11/12 ">
               <Routes>
                 <Route
                   path="/"
@@ -79,6 +80,14 @@ const App = () => {
                   element={
                     <Guard>
                       <Detail />
+                    </Guard>
+                  }
+                />
+                <Route
+                  path="/choose_type"
+                  element={
+                    <Guard>
+                      <ChooseType />
                     </Guard>
                   }
                 />

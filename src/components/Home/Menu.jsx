@@ -30,8 +30,8 @@ const Menu = () => {
           <AiFillMessage />
         </button>
       </NavLink>
-      {/* buy cart  */}
-      <NavLink to={"/buy_cart"}>
+      {/* choose Type  */}
+      <NavLink to={"/choose_type"}>
         <button
           type="button"
           className="hover:bg-gradient-to-r hover:shadow-blue-500/50 hover:shadow-lg hover:from-cyan-400 hover:to-blue-600 text-white

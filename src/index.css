@@ -54,3 +54,12 @@ body {
     rgba(1, 5, 8, 1) 100%
   );
 }
+.layer {
+  background: rgb(1, 5, 8);
+  background: linear-gradient(
+    17deg,
+    rgba(1, 5, 8, 1) 0%,
+    rgba(102, 9, 66, 0) 50%,
+    rgba(1, 5, 8, 1) 100%
+  );
+}
