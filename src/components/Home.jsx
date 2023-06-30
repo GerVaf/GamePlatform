@@ -18,9 +18,9 @@ const Home = () => {
   // console.log(gameList);
   const [parent] = useAutoAnimate();
   return (
-    <div className="sm:flex justify-center sm:gap-5">
+    <div className="sm:flex justify-between sm:gap-5">
       {/* middleMenu */}
-      <div className=" sm:w-8/12 sm:flex sm:flex-col ">
+      <div className=" w-11/12 items-center  flex sm:flex-col ">
         <Hero />
         <PopularSlide />
         <div className="sm:flex sm:gap-5">
@@ -56,7 +56,7 @@ const Home = () => {
       </div>
 
       {/* right menu */}
-      <div className=" hidden lg:block sm:w-4/12 sm:h-[140vh] overflow-hidden">
+      <div className=" hidden lg:block lg:w-[370px]  sm:w-3/12 sm:h-[100vh] overflow-hidden">
         <p className="text-white font-bold text-xl mb-3">
           YOU CAN GET DOWN FREE
         </p>
