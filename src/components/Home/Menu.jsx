@@ -9,7 +9,7 @@ import { NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <div className="flex mx-3 my-2 py-3 bg-gray-900 sm:m-0 rounded-xl sm:rounded-none sm:bg-transparent sm:p-0 sm:flex-col items-center gap-7 justify-center sm:gap-10">
+    <div className="w-12/12 flex mx-3 my-2 py-3 bg-gray-900 sm:m-0 rounded-xl sm:rounded-none sm:bg-transparent sm:p-0 sm:flex-col items-center gap-7 justify-center sm:gap-10">
       {/* home  */}
       <NavLink to={"/"}>
         <button

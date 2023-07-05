@@ -24,7 +24,8 @@ const ItemByDate = ({ item }) => {
               <TbListDetails />
             </button>
           </Link>
-          {isAdded?.find((el) => el.slug == item.slug) ? (
+          {Array.isArray(isAdded) &&
+          isAdded?.find((el) => el.slug === item.slug) ? (
             <button
               onClick={() => dispatch(removeFromCart(item))}
               className="absolute text-rose-600 top-2 right-3"

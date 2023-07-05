@@ -15,7 +15,8 @@ import axios from "axios";
 import { addProducts } from "./data/productsSlice";
 import Loading from "./components/Loading/Loading";
 import Guard from "./Guard";
-import ChooseType from "./components/ChooseType";
+import ByYear from "./components/ByDate/ByYear";
+import ByDate from "./components/ByDate";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -87,7 +88,15 @@ const App = () => {
                   path="/choose_type"
                   element={
                     <Guard>
-                      <ChooseType />
+                      <ByDate />
+                    </Guard>
+                  }
+                />
+                <Route
+                  path="/by_year"
+                  element={
+                    <Guard>
+                      <ByYear />
                     </Guard>
                   }
                 />

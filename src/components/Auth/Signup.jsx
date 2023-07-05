@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSignUpMutation } from "../service/Api";
+import { useSignUpMutation } from "../service/AuthApi";
 
 const Signup = () => {
   const [loading, setLoading] = useState(false);

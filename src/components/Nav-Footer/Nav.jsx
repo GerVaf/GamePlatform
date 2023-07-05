@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useLogOutMutation } from "../service/Api";
+import { useLogOutMutation } from "../service/AuthApi";
 import { removeUser } from "../../data/authSlice";
 const Nav = () => {
   const [data, setData] = useState({});
@@ -19,7 +19,7 @@ const Nav = () => {
   useEffect(() => {
     getData();
   }, []);
-  console.log(data);
+  // console.log(data);
 
   const amount = useSelector((state) => state.product.cart);
   const userData = useSelector((state) => state.auth.user);
@@ -36,7 +36,7 @@ const Nav = () => {
   };
 
   return (
-    <div className="bg-[#000000]">
+    <div className="bg-[#000000] w-12/12">
       <div className=" container sm:px-5 mx-auto py-2 justify-between flex items-center mb-5">
         <div className="text-white font-bold  sm:text-2xl flex items-center gap-2 justify-center">
           <FaSlackHash />
@@ -71,9 +71,9 @@ const Nav = () => {
                 type="button"
                 className="relative bg-gradient-to-r shadow-blue-500/60 shadow-lg hover:from-cyan-400 hover:to-blue-600 from-cyan-400 to-blue-500 text-white sm:text-2xl p-2 rounded-md text-xl sm:rounded-xl"
               >
-                {amount.length > 0 ? (
+                {amount?.length > 0 ? (
                   <span className=" rounded-[50%] w-6 h-6 flex items-center justify-center bg-red-400 text-white text-sm top-[-5px] right-[-10px] absolute">
-                    {amount.length}
+                    {amount?.length}
                   </span>
                 ) : null}
                 <RiShoppingCartFill />

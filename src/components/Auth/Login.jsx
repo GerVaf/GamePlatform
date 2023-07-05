@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { addUser } from "../../data/authSlice";
-import { useLoginMutation } from "../service/Api";
+import { useLoginMutation } from "../service/AuthApi";
 
 const Login = () => {
   const [loading, setLoading] = useState(false);

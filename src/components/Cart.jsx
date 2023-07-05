@@ -11,10 +11,10 @@ const Cart = () => {
   return (
     <>
       {CartItem?.length < 1 ? (
-        <div className="text-blue-400 h-[100vh] flex justify-center items-center font-bold text-4xl"> There's nothing.Let's buy the games to feel the new world!</div>
+        <div className="text-blue-400 h-[90vh] flex justify-center items-center font-bold sm:text-4xl px-10"> There's nothing.Let's buy the games to feel the new world!</div>
       ) : (
         <div className="flex p-5 flex-wrap justify-center gap-10 rounded-lg">
-          {CartItem.map((el) => {
+          {CartItem?.map((el) => {
             return (
               <div
                 key={el.id}

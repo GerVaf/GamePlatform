@@ -4,14 +4,17 @@ export const ProductSlice = createSlice({
   name: "product",
   initialState: {
     item: [],
-    cart: [],
-    custom:[],
+    cart: [], // Add an empty array for the cart
+    custom: [],
   },
   reducers: {
     addProducts: (state, action) => {
       state.item = action.payload;
     },
     addItems: (state, action) => {
+      if (!state.cart) {
+        state.cart = [];
+      }
       state.cart.push(action.payload);
     },
     removeFromCart: (state, action) => {
@@ -19,12 +22,13 @@ export const ProductSlice = createSlice({
     },
     customItems: (state, action) => {
       state.custom = state.item.filter((item) =>
-        item.genres.find((el) => el.name.includes(action.payload.title)),
-        console.log(state.custom)
+        item.genres.find((el) => el.name.includes(action.payload.title))
       );
+      console.log(state.custom);
     },
   },
 });
+
 export const { addProducts, addItems, removeFromCart, customItems } =
   ProductSlice.actions;
 export default ProductSlice.reducer;
