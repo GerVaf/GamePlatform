@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -15,8 +16,25 @@ import {
 } from "../../../node_modules/react-icons/lu";
 
 import { addItems, removeFromCart } from "../../data/productsSlice";
-
+import { SplideSlide, Splide } from "@splidejs/react-splide";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+import "@splidejs/react-splide/css";
+import "@splidejs/react-splide/css/core";
+import { useEffect } from "react";
+import "./slide.css"
 const PopularSlide = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const SlideData = useSelector((state) => state?.product.item);
   // console.log(SlideData);
   const PopularGame = SlideData?.filter((el) => el.added > 4100);
@@ -133,6 +151,7 @@ const PopularSlide = () => {
               </div>
             </div>
           ))}
+
         </div>
       </div>
     </>

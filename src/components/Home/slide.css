@@ -1,0 +1,25 @@
+.splide__arrow--next {
+  right: -2rem;
+}
+.splide__arrow--prev {
+  left: -2rem;
+}
+/* .splide__arrow--next:hover {
+  color: blue;
+}
+.splide__arrow--prev:hover {
+  color: blue;
+} */
+.splide__arrow svg {
+  fill: rgba(22, 8, 223, 0.185);
+  height: 1.3em;
+  width: 1.3em;
+}
+.splide__arrow svg:hover {
+  fill: rgb(22, 8, 223);
+}
+.splide__pagination__page.is-active {
+  background: rgb(17, 0, 255);
+  transform: scale(1.4);
+  z-index: 1;
+}

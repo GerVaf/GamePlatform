@@ -13,6 +13,7 @@ const GlassCard = () => {
 // console.log(CardData)
   return (
     <>
+
       <div className=" marqe flex flex-col gap-5">
         {CardData?.map((card) => {
           return <CarouselCard key={card.id} {...card} />;

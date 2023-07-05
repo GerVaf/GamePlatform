@@ -14,22 +14,22 @@ const CarouselCard = (props) => {
   // console.log(isAdded);
   const dispatch = useDispatch();
   return (
-    <div key={id} className=" p-3 mainbg rounded-3xl flex text-gray-300 gap-5">
+    <div key={id} className=" w-[370px] p-1 mainbg rounded-3xl flex text-gray-300 gap-3">
       <img
-        className=" rounded-2xl w-28 object-cover"
+        className=" rounded-2xl w-24 object-cover"
         src={background_image}
         alt=""
       />
       <div className="flex  flex-col gap-y-2 justify-start">
         <div>
-          <span className=" text-sky-500 font-extrabold px-3 py-1 card rounded-2xl">
+          <span className=" text-sky-500 font-extrabold px-2 py-1 card rounded-2xl">
             {genres[0]?.slug}
           </span>
         </div>
         <div className="">
           <h2 className=" font-bold">{name}</h2>
         </div>
-        <div className="flex text-white gap-x-5 text-xl">
+        <div className="flex text-white gap-x-3 text-xl">
           <div className="flex gap-1">
             <AiFillEye />
             <p className="text-xs">{added_by_status.playing}k</p>
