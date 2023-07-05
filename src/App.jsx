@@ -106,7 +106,7 @@ const App = () => {
             </div>
           </div>
           <div className=" z-50 block sm:hidden w-[100%] fixed bottom-0">
-            <Menu/>
+            <Menu />
           </div>
         </div>
       )}

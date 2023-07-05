@@ -16,12 +16,7 @@ import {
 } from "../../../node_modules/react-icons/lu";
 
 import { addItems, removeFromCart } from "../../data/productsSlice";
-import { SplideSlide, Splide } from "@splidejs/react-splide";
-import "@splidejs/splide/dist/css/themes/splide-default.min.css";
-import "@splidejs/react-splide/css";
-import "@splidejs/react-splide/css/core";
-import { useEffect } from "react";
-import "./slide.css"
+
 const PopularSlide = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -68,14 +63,14 @@ const PopularSlide = () => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(0);
-  const totalPages = Math.ceil(PopularGame.length / itemsPerPage);
+  const totalPages = Math.ceil(PopularGame?.length / itemsPerPage);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
   };
 
   const startIndex = currentPage * itemsPerPage;
-  const visibleItems = PopularGame.slice(startIndex, startIndex + itemsPerPage);
+  const visibleItems = PopularGame?.slice(startIndex, startIndex + itemsPerPage);
   const [parent, enableAnimations] = useAutoAnimate();
   return (
     <>
@@ -107,7 +102,7 @@ const PopularSlide = () => {
         </div>
         {/* card and animation */}
         <div ref={parent} className="flex justify-center gap-5 select-none">
-          {visibleItems.map((el) => (
+          {visibleItems?.map((el) => (
             <div
               key={el.id}
               className="flex bg-gradient-to-r to-gray-500 from-zinc-800  hover:bg-gradient-to-r hover:to-gray-600 hover:from-zinc-900 rounded-lg items-center w-12/12 sm:w-3/12 h-80 flex-col"
@@ -127,7 +122,7 @@ const PopularSlide = () => {
                   <div className="flex justify-center items-center gap-5 text-xl">
                     <button className=" hover:text-rose-600">
                       <Link to={`/detail/${el.slug}`}>
-                        <BsCartPlus />
+                        <TbListDetails />
                       </Link>
                     </button>
                     {Array.isArray(isAdded) &&
