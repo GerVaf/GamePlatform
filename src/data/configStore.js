@@ -3,8 +3,9 @@ import ProductSlice from "./productsSlice";
 import { persistReducer } from "redux-persist";
 import { combineReducers } from "@reduxjs/toolkit";
 import storage from "redux-persist/lib/storage"; // defaults to localStorage for web
-import { authApi } from "../components/service/Api";
 import authSlice from "./authSlice";
+import { DataApi } from "../components/service/DataApi";
+import { authApi } from "../components/service/AuthApi";
 
 const persistConfig = {
   key: "root",
@@ -15,7 +16,8 @@ const persistConfig = {
 const reducers = combineReducers({
   product: ProductSlice,
   [authApi.reducerPath]: authApi.reducer,
-  auth:authSlice,
+  [DataApi.reducerPath]: DataApi.reducer,
+  auth: authSlice,
 });
 
 const persistedReducer = persistReducer(persistConfig, reducers);
@@ -23,5 +25,5 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = configureStore({
   reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(authApi.middleware),
+    getDefaultMiddleware().concat(authApi.middleware,DataApi.middleware),
 });

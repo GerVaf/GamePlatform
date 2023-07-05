@@ -7,14 +7,15 @@ import CarouselCard from "./CarouselCard";
 
 const GlassCard = () => {
   const CardData = useSelector((state) =>
-    state?.product.item.filter((el) => el.added < 14100)
+    state?.product?.item?.filter((el) => el.added < 14100)
   );
 
 // console.log(CardData)
   return (
     <>
-      <div className=" marqe flex flex-col gap-y-5">
-        {CardData.map((card) => {
+
+      <div className=" marqe flex flex-col gap-5">
+        {CardData?.map((card) => {
           return <CarouselCard key={card.id} {...card} />;
         })}
       </div>

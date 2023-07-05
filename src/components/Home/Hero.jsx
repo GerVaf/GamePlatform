@@ -25,20 +25,22 @@ const Hero = () => {
     //   </div>
     // </div>
     <>
-      <div className="flex flex-wrap  items-center lg:justify-around justify-center  my-10 video-cuz z-20 text-white">
-        <div className="lg:h-[300px] md:h-[400px]">
-          <ReactPlayer
-            volume={0.5}
-            loop={true}
-            stopOnUnmount={true}
-            url={video}
-            width="95%"
-            height="100%"
-            // playing={true}
-            controls
-          />
+      <div className="flex gap-5 items-center lg:justify-around justify-center h-[50vh] my-10 text-white">
+        <div className="h-[100%] w-8/12 relative">
+          <div className="video-cuz h-[100%] w-[100%] z-20 absolute"></div>
+          <div className="z-10 h-[100%] w-[100%]">
+            <ReactPlayer
+              volume={0.5}
+              loop={true}
+              stopOnUnmount={true}
+              url={video}
+              width="100%"
+              height="100%"
+              controls
+            />
+          </div>
         </div>
-        <div className="flex flex-col justify-between gap-x-0  lg:gap-x-5">
+        <div className="flex w-4/12 flex-col justify-between gap-x-0  lg:gap-x-5">
           <div className="lg:block flex">
             <h1 className="font-bold text-xl">CyberPunk</h1>
             <p className="font-semibold text-lg ml-5 mb-5">
