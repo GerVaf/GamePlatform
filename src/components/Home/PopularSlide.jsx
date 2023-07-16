@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
@@ -16,6 +15,8 @@ import {
 } from "../../../node_modules/react-icons/lu";
 
 import { addItems, removeFromCart } from "../../data/productsSlice";
+import LazyLoad from "react-lazyload";
+import Loading from "../Loading/Loading";
 
 const PopularSlide = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -70,7 +71,10 @@ const PopularSlide = () => {
   };
 
   const startIndex = currentPage * itemsPerPage;
-  const visibleItems = PopularGame?.slice(startIndex, startIndex + itemsPerPage);
+  const visibleItems = PopularGame?.slice(
+    startIndex,
+    startIndex + itemsPerPage
+  );
   const [parent, enableAnimations] = useAutoAnimate();
   return (
     <>
@@ -107,11 +111,14 @@ const PopularSlide = () => {
               key={el.id}
               className="flex bg-gradient-to-r to-gray-500 from-zinc-800  hover:bg-gradient-to-r hover:to-gray-600 hover:from-zinc-900 rounded-lg items-center w-12/12 sm:w-3/12 h-80 flex-col"
             >
-              <img
-                className="sm:w-[100%] w-80 h-[50%] object-cover rounded-t-lg"
-                src={el?.background_image}
-                alt=""
-              />
+              <LazyLoad className="h-[50%] flex items-center justify-center" once placeholder={<Loading />}>
+                <img
+                  className="object-cover h-[100%]"
+                  src={el?.background_image}
+                  alt=""
+                />
+              </LazyLoad>
+
               <div className="w-[100%] px-5 flex flex-col text-sm justify-around h-[50%]">
                 <p className="py-1 flex justify-center rounded-md bg-gradient-to-r shadow-red-500/90 shadow-md hover:from-rose-400 hover:to-red-600 from-rose-400 to-red-500 text-white">
                   NEW GAME
@@ -146,7 +153,6 @@ const PopularSlide = () => {
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </>

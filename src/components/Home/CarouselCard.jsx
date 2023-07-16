@@ -14,13 +14,13 @@ const CarouselCard = (props) => {
   // console.log(isAdded);
   const dispatch = useDispatch();
   return (
-    <div key={id} className=" w-[370px] p-1 mainbg rounded-3xl flex text-gray-300 gap-3">
+    <div key={id} className=" w-[100%] h-[150px] p-1 mainbg rounded-3xl flex text-gray-300 gap-3">
       <img
-        className=" rounded-2xl w-24 object-cover"
+        className=" rounded-2xl w-4/12 h-[100%] object-cover"
         src={background_image}
         alt=""
       />
-      <div className="flex  flex-col gap-y-2 justify-start">
+      <div className="flex flex-col gap-y-2 justify-start">
         <div>
           <span className=" text-sky-500 font-extrabold px-2 py-1 card rounded-2xl">
             {genres[0]?.slug}

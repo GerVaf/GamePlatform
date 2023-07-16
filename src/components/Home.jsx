@@ -17,6 +17,7 @@ const Home = () => {
   // console.log(searchTerm);
   // console.log(gameList);
   const [parent] = useAutoAnimate();
+  
   return (
     <div className="sm:flex sm:flex-col justify-center sm:gap-5">
       {/* top */}

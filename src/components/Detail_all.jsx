@@ -10,6 +10,10 @@ import {
 } from "../../node_modules/react-icons/si";
 import { Carousel } from "@mantine/carousel";
 import { Image } from "@mantine/core";
+import LazyLoad from "react-lazyload";
+import Loading from "./Loading/Loading";
+import DetailLoad from "./Loading/DetailLoad";
+import ImgLoad from "./Loading/ImgLoad";
 
 const Detail_all = () => {
   const gameDetail = useSelector((state) => state?.product.item);
@@ -26,11 +30,15 @@ const Detail_all = () => {
                 <div className=" flex text-white gap-5">
                   {/* left  */}
                   <div className="w-6/12 rounded-lg">
-                    <img
-                      className=" w-[100%] h-96 object-top object-cover"
-                      src={item?.background_image}
-                      alt=""
-                    />
+                    <div className="flex justify-center items-center bg-zinc-900 mx-10 h-[100%]">
+                      <LazyLoad once placeholder={<DetailLoad />}>
+                        <img
+                          className=" w-[100%] h-96 object-top object-cover"
+                          src={item?.background_image}
+                          alt=""
+                        />
+                      </LazyLoad>
+                    </div>
                   </div>
 
                   {/* right  */}
@@ -125,7 +133,11 @@ const Detail_all = () => {
                       {item?.short_screenshots.map((dev) => {
                         return (
                           <Carousel.Slide>
-                            <Image src={dev.image} />
+                            <div className="flex justify-center bg-zinc-900 items-center h-[200px]">
+                              <LazyLoad once placeholder={<DetailLoad />}>
+                                <Image src={dev.image} />
+                              </LazyLoad>
+                            </div>
                           </Carousel.Slide>
                         );
                       })}
@@ -143,7 +155,7 @@ const Detail_all = () => {
                     <div className=" flex flex-wrap h-32 gap-5  text-md overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600">
                       {item?.tags.map((tag) => {
                         return (
-                          <div>
+                          <div className="flex justify-center items-center h-[100%]">
                             <button className="px-3 py-1 rounded-sm mainbg ">
                               {tag.name}
                             </button>
@@ -154,29 +166,33 @@ const Detail_all = () => {
                     {/* smiliar games */}
                     <div className="flex flex-col gap-2">
                       <p className="text-lg font-bold">SIMILAR GAMES</p>
-                      <div className="flex  gap-3  text-md">
-                        <Marquee
-                          className="flex h-72 "
-                          autoFill={true}
-                          speed={70}
-                          pauseOnHover={true}
-                          gradientColor={false}
-                        >
-                          {item.tags?.map((hilight) => {
-                            return (
-                              <div
-                                key={hilight.id}
-                                className=" mx-2 flex  gap-3 font-bold"
-                              >
-                                <img
-                                  className=" h-56 object-cover rounded-md"
-                                  src={hilight.image_background}
-                                  alt=""
-                                />
-                              </div>
-                            );
-                          })}
-                        </Marquee>
+                      <div className="flex gap-3 text-md">
+                        <LazyLoad className="flex justify-center items-center w-[100%] h-72" once placeholder={<ImgLoad />}>
+                          <Marquee
+                            className="flex h-72 "
+                            autoFill={true}
+                            speed={70}
+                            pauseOnHover={true}
+                            gradientColor={false}
+                          >
+                            {item.tags?.map((hilight) => {
+                              return (
+                                <div
+                                  key={hilight.id}
+                                  className=" mx-2 flex  gap-3 font-bold"
+                                >
+                                  <div className="flex justify-center items-center h-[100%]">
+                                    <img
+                                      className=" h-56 object-cover rounded-md"
+                                      src={hilight.image_background}
+                                      alt=""
+                                    />
+                                  </div>
+                                </div>
+                              );
+                            })}
+                          </Marquee>
+                        </LazyLoad>
                       </div>
                     </div>
                   </div>
