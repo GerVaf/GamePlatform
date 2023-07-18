@@ -50,7 +50,7 @@ const App = () => {
             <div className=" hidden h-[40vh] sticky top-28 sm:w-1/12 sm:flex justify-center">
               <Menu />
             </div>
-            <div className=" w-12/12 sm:w-11/12 h-[90vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-sky-500">
+            <div className=" w-12/12 sm:w-11/12 h-[95vh] overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-thumb-sky-500 sm:mb-0 mb-20">
               <Routes>
                 <Route
                   path="/"

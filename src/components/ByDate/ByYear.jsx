@@ -5,17 +5,16 @@ import Marquee from "react-fast-marquee";
 import { AiFillWindows } from "react-icons/ai";
 import { FaPlaystation, FaXbox } from "react-icons/fa";
 import { SiNintendogamecube, SiScrollreveal } from "react-icons/si";
+import { useSelector } from "react-redux";
 import { useGet2013_2014Query } from "../service/DataApi";
 
 const ByYear = () => {
-  const { data: batch } = useGet2013_2014Query();
-//   console.log(batch.results);
-  const GameByDate = batch.results;
-  console.log(GameByDate)
+  const Data = useSelector(state=>console.log(state?.product?.dateByYear?.results));
+
 
   return (
     <div className="flex flex-col gap-16 overflow-hidden">
-      {GameByDate.map((item) => {
+      {Data?.map((item) => {
         return (
           <div className="flex">
             <div className="w-11/12 flex flex-col gap-5 border-slate-500 border-b py-5">
@@ -99,85 +98,7 @@ const ByYear = () => {
                 </div>
               </div>
 
-              {/* bottom  */}
-              <div className="text-white flex flex-col gap-5">
-                {/* game hilight */}
-                <div className=" flex flex-col gap-2">
-                  <p className="text-lg font-bold">GAME HILIGHT</p>
-                  <Carousel
-                    withIndicators
-                    height={200}
-                    slideSize="33.333333%"
-                    slideGap="md"
-                    loop
-                    align="start"
-                    slidesToScroll={3}
-                    styles={{
-                      control: {
-                        color: "red",
-                        borderBlockColor: "red",
-                      },
-                    }}
-                  >
-                    {item?.short_screenshots.map((dev) => {
-                      return (
-                        <Carousel.Slide>
-                          <Image src={dev.image} />
-                        </Carousel.Slide>
-                      );
-                    })}
-                  </Carousel>
-                </div>
-
-                {/* hilight and tags */}
-                <p className="text-lg font-bold">TAGS</p>
-                <p className="gap-5  flex justify-center items-center font-medium">
-                  View to scroll <SiScrollreveal />
-                </p>
-
-                <div className="flex flex-col gap-5">
-                  {/* tags */}
-                  <div className=" flex flex-wrap h-32 gap-5  text-md overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600">
-                    {item?.tags.map((tag) => {
-                      return (
-                        <div>
-                          <button className="px-3 py-1 rounded-sm mainbg ">
-                            {tag.name}
-                          </button>
-                        </div>
-                      );
-                    })}
-                  </div>
-                  {/* smiliar games */}
-                  <div className="flex flex-col gap-2">
-                    <p className="text-lg font-bold">SIMILAR GAMES</p>
-                    <div className="flex  gap-3  text-md">
-                      <Marquee
-                        className="flex h-72 "
-                        autoFill={true}
-                        speed={70}
-                        pauseOnHover={true}
-                        gradientColor={false}
-                      >
-                        {item.tags?.map((hilight) => {
-                          return (
-                            <div
-                              key={hilight.id}
-                              className=" mx-2 flex  gap-3 font-bold"
-                            >
-                              <img
-                                className=" h-56 object-cover rounded-md"
-                                src={hilight.image_background}
-                                alt=""
-                              />
-                            </div>
-                          );
-                        })}
-                      </Marquee>
-                    </div>
-                  </div>
-                </div>
-              </div>
+             
             </div>
           </div>
         );

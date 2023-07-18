@@ -40,11 +40,11 @@ const Detail = () => {
     <>
       <div className="flex">
         {/* right side  */}
-        <div className="sm:w-12/12 w-[100vw] flex flex-col gap-5">
+        <div className="sm:w-12/12 overflow-hidden w-[100vw] flex flex-col gap-5">
           {/* top */}
           <div className=" flex flex-col sm:flex-row text-white gap-5">
             {/* left  */}
-            <div className="sm:w-6/12 rounded-lg">
+            <div className="sm:w-[50%] rounded-lg">
               <img
                 className=" sm:w-[100%] w-[100vw] sm:h-96 object-top object-cover"
                 src={gameData?.background_image}
@@ -53,7 +53,7 @@ const Detail = () => {
             </div>
 
             {/* right  */}
-            <div className="sm:w-6/12 w-[100%] flex flex-col gap-5 ">
+            <div className="sm:w-[50%] w-[100%] flex flex-col gap-5 ">
               <p
                 className="sm:text-xl font-bold
               "
@@ -85,7 +85,7 @@ const Detail = () => {
                 )}
               </div>
 
-              <p className=" sm:h-72 h-44 w-[100vw] overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600">
+              <p className=" sm:h-72 h-44 overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600">
                 {gameData?.description_raw}
               </p>
             </div>
@@ -131,7 +131,7 @@ const Detail = () => {
                 {gameData?.developers.map((dev) => {
                   return (
                     <div
-                      className="flex sm:h-48 h-32 rounded-t-md flex-col gap-2 bg-zinc-500 font-bold text-slate-200 items-center"
+                      className="flex sm:h-48 h-32 rounded-t-md flex-col gap-2 bg-zinc-800 font-bold text-slate-200 items-center"
                       key={dev.id}
                     >
                       <img

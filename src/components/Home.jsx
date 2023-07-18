@@ -19,7 +19,7 @@ const Home = () => {
   const [parent] = useAutoAnimate();
   
   return (
-    <div className="sm:flex sm:flex-col justify-center sm:gap-5">
+    <div className="sm:flex sm:flex-col justify-center sm:gap-5 overflow-hidden">
       {/* top */}
       <div className="flex sm:flex-row flex-col gap-5 sm:h-[90vh]">
         {/* left Hero and slide  */}
@@ -44,13 +44,13 @@ const Home = () => {
           setSearchTerm={setSearchTerm}
           gameList={gameList}
         />
-        <div className="text-white">
+        <div className="text-white flex flex-col items-center">
           <p className="font-bold sm:text-xl py-2 my-3">
             CHOSE YOUR GAME TO PLAY
           </p>
           <div
             ref={parent}
-            className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[100vw] sm:w-[100vh] lg:w-[100vh]  h-[50vh] sm:h-[50vh]"
+            className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[90vw] sm:w-[100vw] lg:w-[100vh]  h-[50vh] sm:h-[50vh]"
           >
             {gameList
               ?.filter((product) => {

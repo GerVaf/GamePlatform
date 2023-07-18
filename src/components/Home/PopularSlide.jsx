@@ -105,15 +105,15 @@ const PopularSlide = () => {
           </div>
         </div>
         {/* card and animation */}
-        <div ref={parent} className="flex justify-center gap-5 select-none">
+        <div ref={parent} className="flex justify-center gap-5 select-none ">
           {visibleItems?.map((el) => (
             <div
               key={el.id}
-              className="flex bg-gradient-to-r to-gray-500 from-zinc-800  hover:bg-gradient-to-r hover:to-gray-600 hover:from-zinc-900 rounded-lg items-center w-12/12 sm:w-3/12 h-80 flex-col"
+              className="flex bg-gradient-to-r to-gray-500 from-zinc-800  hover:bg-gradient-to-r hover:to-gray-600 hover:from-zinc-900 w-[90%] rounded-lg items-center sm:w-3/12 h-80 flex-col overflow-hidden"
             >
-              <LazyLoad className="h-[50%] flex items-center justify-center" once placeholder={<Loading />}>
+              <LazyLoad className="h-[50%] w-[100%] flex items-center justify-center" once placeholder={<Loading />}>
                 <img
-                  className="object-cover h-[100%]"
+                  className="object-cover w-[100%] h-[100%]"
                   src={el?.background_image}
                   alt=""
                 />

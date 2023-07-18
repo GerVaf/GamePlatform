@@ -4,8 +4,9 @@ export const ProductSlice = createSlice({
   name: "product",
   initialState: {
     item: [],
-    cart: [], // Add an empty array for the cart
+    cart: [],
     custom: [],
+    dateByYear: [],
   },
   reducers: {
     addProducts: (state, action) => {
@@ -26,9 +27,12 @@ export const ProductSlice = createSlice({
       );
       console.log(state.custom);
     },
+    yearData: (state, { payload }) => {
+      state.dateByYear = payload;
+    },
   },
 });
 
-export const { addProducts, addItems, removeFromCart, customItems } =
+export const { addProducts, addItems, removeFromCart, customItems, yearData } =
   ProductSlice.actions;
 export default ProductSlice.reducer;
