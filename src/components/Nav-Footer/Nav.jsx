@@ -36,8 +36,8 @@ const Nav = () => {
   };
 
   return (
-    <div className="bg-[#000000] h-[5vh] w-12/12">
-      <div className=" container sm:px-5 mx-auto py-2 justify-between flex items-center mb-5">
+    <div className="bg-gray-900 h-[10vh] flex items-center w-12/12 mb-5">
+      <div className=" h-[100%] container sm:px-5 mx-auto justify-between flex items-center">
         <div className="text-white font-bold  sm:text-2xl flex items-center gap-2 justify-center">
           <FaSlackHash />
           <p>HashTag</p>

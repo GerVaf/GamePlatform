@@ -42,7 +42,7 @@ const App = () => {
           <Loading />
         </div>
       ) : (
-        <div>
+        <div className="h-[100vh] overflow-hidden sm:mb-0 mb-20">
           <Nav />
 
           <div className="flex relative">
@@ -50,7 +50,7 @@ const App = () => {
             <div className=" hidden h-[40vh] sticky top-28 sm:w-1/12 sm:flex justify-center">
               <Menu />
             </div>
-            <div className=" w-12/12 sm:w-11/12 h-[95vh] overflow-y-scroll scroll-smooth scrollbar-thin scrollbar-thumb-sky-500 sm:mb-0 mb-20">
+            <div className=" w-12/12 sm:w-11/12 h-[90vh] overflow-y-scroll scroll-smooth sm:scrollbar-thin sm:scrollbar-thumb-sky-500 ">
               <Routes>
                 <Route
                   path="/"
