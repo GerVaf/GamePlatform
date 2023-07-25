@@ -109,9 +109,9 @@ const PopularSlide = () => {
           {visibleItems?.map((el) => (
             <div
               key={el.id}
-              className="flex bg-gradient-to-r to-gray-600 from-zinc-900  hover:bg-gradient-to-r hover:to-gray-700 hover:from-zinc-900 w-[90%] rounded-lg items-center sm:w-3/12 h-80 flex-col overflow-hidden"
+              className="flex bg-gradient-to-r to-gray-600 from-zinc-900  hover:bg-gradient-to-r hover:to-gray-700 hover:from-zinc-900 w-[90%] rounded-lg items-center sm:w-3/12 h-60 flex-col overflow-hidden gap-2"
             >
-              <LazyLoad className="h-[60%] w-[100%] flex items-center justify-center" once placeholder={<Loading />}>
+              <LazyLoad className="h-[50%] w-[100%] flex items-center justify-center" once placeholder={<Loading />}>
                 <img
                   className="object-cover w-[100%] h-[100%]"
                   src={el?.background_image}
@@ -119,7 +119,7 @@ const PopularSlide = () => {
                 />
               </LazyLoad>
 
-              <div className="w-[100%] px-5 flex flex-col text-sm justify-around h-[40%]">
+              <div className="w-[100%] px-5 flex flex-col text-sm justify-around h-[50%]">
                 <p className="py-1 flex justify-center rounded-md bg-gradient-to-r shadow-red-500/90 shadow-md hover:from-rose-400 hover:to-red-600 from-rose-400 to-red-500 text-white">
                   NEW GAME
                 </p>

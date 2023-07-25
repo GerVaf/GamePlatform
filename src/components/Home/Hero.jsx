@@ -33,7 +33,7 @@ const Hero = ({ gameList }) => {
           return (
             <SwiperSlide className="group" key={img?.id}>
               <img
-                className="w-[100vw] h-[100%] rounded-lg object-cover object-top"
+                className="rounded-lg object-cover object-top"
                 src={img?.background_image}
                 alt=""
               />
@@ -44,7 +44,11 @@ const Hero = ({ gameList }) => {
                   <h1 className="text-xl border-b ">{img?.name}</h1>
                   <div className="flex gap-5 flex-wrap">
                     {img?.genres?.map((el) => {
-                      return <p key={el.id}>{el.name}</p>;
+                      return (
+                        <p className="text-[10px]" key={el.id}>
+                          {el.name}
+                        </p>
+                      );
                     })}
                   </div>
                 </div>

@@ -45,7 +45,8 @@ const Home = () => {
           CHOSE YOUR GAME TO PLAY
         </p>
         <div className="sm:flex sm:flex-row flex flex-col gap-5 ">
-          <div className="sm:flex gap-5 sm:w-8/12">
+          {/* option and games  */}
+          <div className="sm:w-8/12 sm:flex gap-5 sm:h-[70vh] ">
             <SlideMenu
               searchTerm={searchTerm}
               setSearchTerm={setSearchTerm}
@@ -54,7 +55,7 @@ const Home = () => {
             <div className="text-white flex flex-col items-center">
               <div
                 ref={parent}
-                className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[90vw] sm:w-[100vw] lg:w-[100vh]  h-[50vh] sm:h-[50vh]"
+                className=" scroll-smooth overflow-y-scroll scrollbar-thumb-sky-600 scrollbar-thin scrollbar-track-slate-600 w-[90vw] sm:w-[100vw] lg:w-[100vh]  h-[50vh] sm:h-[100%]"
               >
                 {gameList
                   ?.filter((product) => {
@@ -72,7 +73,8 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="sm:w-4/12 sm:pb-10 px-5">
+          {/* just the box  */}
+          <div className="sm:w-4/12 sm:pb-10 px-5 h-[40vh] sm:h-[70vh]">
             <Box />
           </div>
         </div>

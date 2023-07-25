@@ -22,7 +22,7 @@ const SlideMenu = ({ setSearchTerm }) => {
   };
   return (
     <>
-      <ul className="text-white cursor-pointer flex flex-wrap justify-center text-sm gap-5 py-5 sm:flex sm:flex-col font-bold sm:gap-4 sm:items-start  sm:py-16">
+      <ul className="text-white cursor-pointer sm:h-[100%] flex flex-wrap justify-center sm:justify-around text-sm gap-5 py-5 sm:flex sm:flex-col font-bold  sm:items-start ">
         {bar.map((el, index) => {
           const isActive = index === activeIndex;
           return (

@@ -210,7 +210,7 @@ const Box = () => {
     };
   }, []);
 
-  return <canvas className=" rounded-lg" ref={canvasRef} id="canvas"></canvas>;
+  return <canvas className=" h-[40vh] sm:h-[100%] rounded-lg" ref={canvasRef} id="canvas"></canvas>;
 };
 
 export default Box;
