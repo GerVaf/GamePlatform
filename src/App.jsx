@@ -17,6 +17,7 @@ import Loading from "./components/Loading/Loading";
 import Guard from "./Guard";
 import ByYear from "./components/ByDate/ByYear";
 import ByDate from "./components/ByDate";
+import DetailGuard from "./DetailGuard";
 
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -72,7 +73,9 @@ const App = () => {
                   path="/detail_all"
                   element={
                     <Guard>
-                      <Detail_all />
+                      <DetailGuard>
+                        <Detail_all />
+                      </DetailGuard>
                     </Guard>
                   }
                 />

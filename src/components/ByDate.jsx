@@ -77,9 +77,9 @@ const ByDate = () => {
           </div>
           <div className="flex z-20 w-[100%] justify-around items-center absolute bottom-2">
             <div className="font-bold text-white">
-              <h1 className="text-sm sm:text-md">2022-2023 Present</h1>
+              <h1 className="text-sm sm:text-md">2013-2014 Present</h1>
               <p className="text-[10px] sm:text-[12px]">
-                br nyr kwr seat leelee lrlr
+                Click To Show Detail Mate . . .
               </p>
             </div>
             <BsFillArrowRightSquareFill className="sm:text-2xl group-hover:translate-x-5 duration-500 transition" />
@@ -94,15 +94,15 @@ const ByDate = () => {
           <div>
             <img
               className=" w-[100%] h-[100%] object-cover object-top group-hover:scale-[1.1] duration-300 transition opacity-90 absolute group-hover:opacity-95 z-10"
-              src="https://assetsio.reedpopcdn.com/league_of_legends1_3Q0mo3s.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
+              src="https://cutewallpaper.org/23/a-song-of-ice-and-fire-hd-wallpaper/1739531730.jpg"
               alt=""
             />
           </div>
           <div className="flex z-20 w-[100%] justify-around items-center absolute bottom-2">
             <div className="font-bold text-white">
-              <h1 className="text-sm sm:text-md">2022-2023 Present</h1>
+              <h1 className="text-sm sm:text-md">2014-2015 Present</h1>
               <p className="text-[10px] sm:text-[12px]">
-                br nyr kwr seat leelee lrlr
+                Click To Show Detail Mate . . .
               </p>
             </div>
             <BsFillArrowRightSquareFill className="sm:text-2xl group-hover:translate-x-5 duration-500 transition" />
@@ -117,15 +117,15 @@ const ByDate = () => {
           <div>
             <img
               className=" w-[100%] h-[100%] object-cover object-top group-hover:scale-[1.1] duration-300 transition opacity-90 absolute group-hover:opacity-95 z-10"
-              src="https://assetsio.reedpopcdn.com/league_of_legends1_3Q0mo3s.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
+              src="https://wallpaperaccess.com/full/974552.jpg"
               alt=""
             />
           </div>
           <div className="flex z-20 w-[100%] justify-around items-center absolute bottom-2">
             <div className="font-bold text-white">
-              <h1 className="text-sm sm:text-md">2022-2023 Present</h1>
+              <h1 className="text-sm sm:text-md">2015-2016 Present</h1>
               <p className="text-[10px] sm:text-[12px]">
-                br nyr kwr seat leelee lrlr
+                Click To Show Detail Mate . . .
               </p>
             </div>
             <BsFillArrowRightSquareFill className="sm:text-2xl group-hover:translate-x-5 duration-500 transition" />
@@ -143,15 +143,15 @@ const ByDate = () => {
           <div>
             <img
               className=" w-[100%] h-[100%] object-cover object-top group-hover:scale-[1.1] duration-300 transition opacity-90 absolute group-hover:opacity-95 z-10"
-              src="https://assetsio.reedpopcdn.com/league_of_legends1_3Q0mo3s.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
+              src="https://wallpaperaccess.com/full/47128.jpg"
               alt=""
             />
           </div>
           <div className="flex z-20 w-[100%] justify-around items-center absolute bottom-2">
             <div className="font-bold text-white">
-              <h1 className="text-sm sm:text-md">2022-2023 Present</h1>
+              <h1 className="text-sm sm:text-md">2016-2017 Present</h1>
               <p className="text-[10px] sm:text-[12px]">
-                br nyr kwr seat leelee lrlr
+                Click To Show Detail Mate . . .
               </p>
             </div>
             <BsFillArrowRightSquareFill className="sm:text-2xl group-hover:translate-x-5 duration-500 transition" />
@@ -166,15 +166,15 @@ const ByDate = () => {
           <div>
             <img
               className=" w-[100%] h-[100%] object-cover object-top group-hover:scale-[1.1] duration-300 transition opacity-90 absolute group-hover:opacity-95 z-10"
-              src="https://assetsio.reedpopcdn.com/league_of_legends1_3Q0mo3s.jpg?width=1200&height=1200&fit=bounds&quality=70&format=jpg&auto=webp"
+              src="https://img3.wallspic.com/previews/4/6/0/4/6/164064/164064-cyberpunk_city-cyberpunk_2077-cyberpunk-science_fiction-digital_art-x750.jpg"
               alt=""
             />
           </div>
           <div className="flex z-20 w-[100%] justify-around items-center absolute bottom-2">
             <div className="font-bold text-white">
-              <h1 className="text-sm sm:text-md">2022-2023 Present</h1>
+              <h1 className="text-sm sm:text-md">2017-2018 Present</h1>
               <p className="text-[10px] sm:text-[12px]">
-                br nyr kwr seat leelee lrlr
+                Click To Show Detail Mate . . .
               </p>
             </div>
             <BsFillArrowRightSquareFill className="sm:text-2xl group-hover:translate-x-5 duration-500 transition" />
